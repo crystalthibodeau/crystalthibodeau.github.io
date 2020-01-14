@@ -6,8 +6,371 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=El+Messiri&display=swap" rel="stylesheet">
 </head>
-<body>
-<p>test</p>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600');
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+    .nav {
+        font-family: 'El Messiri', sans-serif;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .nav * {
+        box-sizing: border-box;
+        transition: all .4s ease;
+    }
+
+    .nav li {
+        display: inline-block;
+        list-style: outside none none;
+    }
+
+    .nav a {
+        padding: .5em .8em;
+        /*color: rgba(255,255,255,.5);*/
+        color: #a6afb8;
+        position: relative;
+        text-decoration: none;
+    }
+
+    .nav a::before,
+    .nav a::after {
+        content: '';
+        height: 14px;
+        width: 14px;
+        position: absolute;
+        transition: all .35s ease;
+        opacity: 0;
+        padding: .5em .8em;
+
+    }
+
+    .nav a::before {
+        content: '';
+        right: 0;
+        top: 0;
+        border-top: 3px solid honeydew;
+        border-right: 3px solid honeydew;
+        transform: translate(-100%, 50%);
+    }
+
+    .nav a:after {
+        content: '';
+        left: 0;
+        bottom: 0;
+        border-bottom: 3px solid honeydew;
+        border-left: 3px solid honeydew;
+        transform: translate(100%, -50%)
+    }
+
+    .nav a:hover:before,
+    .nav a:hover:after{
+        transform: translate(0,0);
+        opacity: 1;
+    }
+
+    .nav a:hover {
+        color: honeydew;
+    }
+    /*=========================================GRID INITIALIZATION====================================================*/
+
+    *{
+        box-sizing: border-box;
+    }
+    .parent {
+        display: grid;
+        grid-template-columns: 10% repeat(4, 20%) 10%;
+        grid-template-rows: 10% repeat(4, 17.5%) 20%;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-family: 'El Messiri', sans-serif;
+        justify-items: center;
+
+
+    }
+
+    .div1 {
+        grid-area: 2 / 3 / 4 / 5;
+    }
+    .div2 {
+        grid-area: 4 / 2 / 5 / 6;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        letter-spacing: .5em;
+        /*text-shadow: 0 0 6px #FFFFFF;*/
+
+    }
+    .div3 {
+        grid-area: 5 / 2 / 6 / 6;
+        letter-spacing: .15em;
+    }
+    .div4 { grid-area: 7 / 2 / 8 / 6; }
+
+
+    /*=========================================START OF BACKGROUND====================================================*/
+
+    @keyframes move-background {
+        from {
+            -webkit-transform: translate3d(0px, 0px, 0px);
+        }
+        to {
+            -webkit-transform: translate3d(1000px, 0px, 0px);
+        }
+    }
+    @-webkit-keyframes move-background {
+        from {
+            -webkit-transform: translate3d(0px, 0px, 0px);
+        }
+        to {
+            -webkit-transform: translate3d(1000px, 0px, 0px);
+        }
+    }
+
+    @-moz-keyframes move-background {
+        from {
+            -webkit-transform: translate3d(0px, 0px, 0px);
+        }
+        to {
+            -webkit-transform: translate3d(1000px, 0px, 0px);
+        }
+    }
+
+    @-webkit-keyframes move-background {
+        from {
+            -webkit-transform: translate3d(0px, 0px, 0px);
+        }
+        to {
+            -webkit-transform: translate3d(1000px, 0px, 0px);
+        }
+    }
+    .stars {
+        width:100vw;
+        height: 100vh;
+        background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        z-index: 1;
+    }
+
+    .twinkling{
+        width:100vw;
+        height: 100vh;
+        background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
+        /*background-size: 1000px 1000px;*/
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+
+        -moz-animation:move-background 30s linear infinite;
+        -ms-animation:move-background 30s linear infinite;
+        -o-animation:move-background 30s linear infinite;
+        -webkit-animation:move-background 20s linear infinite;
+        animation:move-background 30s linear infinite;
+
+    }
+
+    .clouds{
+        width:100%;
+        height: 100%;
+        background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png") repeat;
+        /*background-size: 1000px 1000px;*/
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+
+        /*-moz-animation:move-background 150s linear infinite;*/
+        /*-ms-animation:move-background 150s linear infinite;*/
+        /*-o-animation:move-background 150s linear infinite;*/
+        /*-webkit-animation:move-background 150s linear infinite;*/
+        /*animation:move-background 150s linear infinite;*/
+    }
+    /*=============================================DIRECT ELEMENT STYLING=============================================*/
+    h1{
+        font-size: 5em;
+    }
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    li{
+        list-style-type: none;
+        margin-top: 1em;
+        padding-right: .5em;
+        font-size: 1.35em;
+    }
+    /*==============================================START OTHER STYLING===============================================*/
+    .circleImg{
+        position: relative;
+        z-index: 5;
+        border-radius: 50%;
+        background-size: cover;
+        height: 19em;
+        width: 19em;
+    }
+    .text{
+        position: center;
+        color: honeydew;
+        z-index: 4;
+    }
+    .fullScreen{
+        width: 90vw; height: 100vh;
+        /*position: absolute; top: 0; left: 0;*/
+    }
+    .fullScreenInner{
+        margin-top: 4em;
+        width: 100vw;
+        position: relative;
+        margin-left: -50vw;
+        height: 100px;
+        left: 50%;
+    }
+    .sticky {
+        padding-top: 1em;
+        display: flex;
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        bottom: 2em;
+        justify-content: flex-end;
+    }
+
+    .arrow {
+        width: 6vmin;
+        height: 6vmin;
+        box-sizing: border-box;
+        bottom: 50%;
+        transform: rotate(-45deg);
+    }
+
+    .arrow:before {
+         content: '';
+         width: 100%;
+         height: 100%;
+         border-width: .8vmin .8vmin 0 0;
+         border-style: solid;
+         border-color: #fafafa;
+         transition: .2s ease;
+         display: block;
+         transform-origin: 100% 0;
+     }
+
+
+    .arrow:after {
+         content: '';
+         float: left;
+         position: relative;
+         top: -100%;
+         width: 100%;
+         height: 100%;
+         border-width: 0 .8vmin 0 0;
+         border-style: solid;
+         border-color: #fafafa;
+         transform-origin: 100% 0;
+         transition:.4s ease;
+     }
+
+    .arrow:hover::after {
+         transform: rotate(45deg);
+         border-color: #2e71a5;
+         height: 120%;
+     }
+    .arrow:hover::before {
+         border-color: #2e71a5;
+         transform: scale(.8);
+
+     }
+
+
+    /*==============================================END OF STYLING====================================================*/
+
+</style>
+
+<body class="parent">
+<a id="top"></a>
+
+            <div class="stars"></div>
+            <div class="twinkling"></div>
+            <div class="clouds"></div>
+
+    <div class="div1">
+        <img src="img/foggy-mountains.jpg" alt="" class="circleImg">
+    </div>
+    <div class="div2">
+        <h1 class="text">Crystal Thibodeau</h1>
+    </div>
+
+            <!-- the entire document -->
+    <div class="div3 text">
+            <nav>
+                <ul class="nav">
+<!--                    <li><a href="#">Home</a></li>-->
+                    <li><a href="#aboutMe">About</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+</div>
+
+
+
+
+<div class="text div4">
+    <div class="fullScreen">
+        <a name="aboutMe"><div class="fullScreenInner"></div></a>
+        <h2>About Me</h2>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus ducimus molestiae nesciunt perferendis sint voluptatum! Cum dolor, earum eligendi enim impedit laudantium maiores nihil, placeat provident quibusdam vitae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi doloribus eligendi facere nihil nobis optio porro quis quo saepe! Earum exercitationem nam officia pariatur repudiandae sit voluptas, voluptatem. Incidunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ducimus maiores voluptates? Aspernatur cupiditate deserunt doloribus ducimus, ea fugit harum hic nostrum perspiciatis placeat porro recusandae repudiandae tempora, temporibus ut.
+    </div>
+
+    <div class="fullScreen">
+    <a name="resume"><div class="fullScreenInner"></div></a>
+    <h2>Resume</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus ducimus molestiae nesciunt perferendis sint voluptatum! Cum dolor, earum eligendi enim impedit laudantium maiores nihil, placeat provident quibusdam vitae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi doloribus eligendi facere nihil nobis optio porro quis quo saepe! Earum exercitationem nam officia pariatur repudiandae sit voluptas, voluptatem. Incidunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ducimus maiores voluptates? Aspernatur cupiditate deserunt doloribus ducimus, ea fugit harum hic nostrum perspiciatis placeat porro recusandae repudiandae tempora, temporibus ut.
+</div>
+
+    <div class="fullScreen">
+        <a name="portfolio"><div class="fullScreenInner"></div></a>
+        <h2>Portfolio</h2>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus ducimus molestiae nesciunt perferendis sint voluptatum! Cum dolor, earum eligendi enim impedit laudantium maiores nihil, placeat provident quibusdam vitae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi doloribus eligendi facere nihil nobis optio porro quis quo saepe! Earum exercitationem nam officia pariatur repudiandae sit voluptas, voluptatem. Incidunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ducimus maiores voluptates? Aspernatur cupiditate deserunt doloribus ducimus, ea fugit harum hic nostrum perspiciatis placeat porro recusandae repudiandae tempora, temporibus ut.
+    </div>
+
+    <div class="fullScreen">
+        <a name="contact"><div class="fullScreenInner"></div></a>
+        <h2>Contact</h2>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus ducimus molestiae nesciunt perferendis sint voluptatum! Cum dolor, earum eligendi enim impedit laudantium maiores nihil, placeat provident quibusdam vitae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi doloribus eligendi facere nihil nobis optio porro quis quo saepe! Earum exercitationem nam officia pariatur repudiandae sit voluptas, voluptatem. Incidunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ducimus maiores voluptates? Aspernatur cupiditate deserunt doloribus ducimus, ea fugit harum hic nostrum perspiciatis placeat porro recusandae repudiandae tempora, temporibus ut.
+    </div>
+    <div class="sticky">
+    <a href="#top" class="arrow"></a>
+    </div>
+
+</div>
+<script>
+
+
+
+
+
+
+</script>
 </body>
 </html>
