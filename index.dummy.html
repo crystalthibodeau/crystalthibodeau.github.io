@@ -215,7 +215,8 @@
     }
     /*=============================================DIRECT ELEMENT STYLING=============================================*/
     h1{
-        font-size: 5em;
+        font-size: 4.5em;
+        margin-top: 1em;
     }
     ul{
         display: flex;
@@ -277,42 +278,42 @@
     }
 
     .arrow:before {
-         content: '';
-         width: 100%;
-         height: 100%;
-         border-width: .8vmin .8vmin 0 0;
-         border-style: solid;
-         border-color: #fafafa;
-         transition: .2s ease;
-         display: block;
-         transform-origin: 100% 0;
-     }
+        content: '';
+        width: 100%;
+        height: 100%;
+        border-width: .8vmin .8vmin 0 0;
+        border-style: solid;
+        border-color: #fafafa;
+        transition: .2s ease;
+        display: block;
+        transform-origin: 100% 0;
+    }
 
 
     .arrow:after {
-         content: '';
-         float: left;
-         position: relative;
-         top: -100%;
-         width: 100%;
-         height: 100%;
-         border-width: 0 .8vmin 0 0;
-         border-style: solid;
-         border-color: #fafafa;
-         transform-origin: 100% 0;
-         transition:.4s ease;
-     }
+        content: '';
+        float: left;
+        position: relative;
+        top: -100%;
+        width: 100%;
+        height: 100%;
+        border-width: 0 .8vmin 0 0;
+        border-style: solid;
+        border-color: #fafafa;
+        transform-origin: 100% 0;
+        transition:.4s ease;
+    }
 
     .arrow:hover::after {
-         transform: rotate(45deg);
-         border-color: #2e71a5;
-         height: 120%;
-     }
+        transform: rotate(45deg);
+        border-color: #2e71a5;
+        height: 120%;
+    }
     .arrow:hover::before {
-         border-color: #2e71a5;
-         transform: scale(.8);
+        border-color: #2e71a5;
+        transform: scale(.8);
 
-     }
+    }
 
     .transbox {
         /*margin: 1em;*/
@@ -337,35 +338,261 @@
     }
     /*==============================================END OF STYLING====================================================*/
 
+
+
+
+
+    @media (max-width: 48em) {
+        /*    !*nav li {*!*/
+        /*    !*    float: left;*!*/
+        /*    !*}*!*/
+        /*    !*nav li a {*!*/
+        /*    !*    padding: 20px 30px;*!*/
+        /*    !*}*!*/
+        /*    !*.menu {*!*/
+        /*    !*    display: block;*!*/
+        /*    !*    clear: none;*!*/
+        /*    !*    float: right;*!*/
+        /*    !*    max-height: none;*!*/
+        /*    !*}*!*/
+        /*    .menu__icon,*/
+        /*    .menu__checkbox,*/
+        /*    .hamburger {*/
+        /*        display: none;*/
+        /*    }*/
+
+        .header {
+            background-color: #fff;
+            box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+            position: fixed;
+            width: 100%;
+            z-index: 3;
+        }
+
+        .header ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+            /*background-color: #fff;*/
+        }
+
+        .header li a {
+            display: block;
+            /*padding: 20px 20px;*/
+            /*border-right: 1px solid #f4f4f4;*/
+            text-decoration: none;
+        }
+
+        .header li a:hover,
+        .header .menu-btn:hover {
+            background-color: #f4f4f4;
+        }
+
+        .header .logo {
+            display: block;
+            float: left;
+            font-size: 2em;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        /* menu */
+
+        .header .menu {
+            clear: both;
+            max-height: 0;
+            transition: max-height .2s ease-out;
+        }
+
+        /* menu icon */
+
+        .header .menu-icon {
+            cursor: pointer;
+            display: inline-block;
+            float: right;
+            padding: 28px 20px;
+            position: relative;
+            user-select: none;
+        }
+
+        .header .menu-icon .navicon {
+            background: #333;
+            display: block;
+            height: 2px;
+            position: relative;
+            transition: background .2s ease-out;
+            width: 18px;
+        }
+
+        .header .menu-icon .navicon:before,
+        .header .menu-icon .navicon:after {
+            background: #333;
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            transition: all .2s ease-out;
+            width: 100%;
+        }
+
+        .header .menu-icon .navicon:before {
+            top: 5px;
+        }
+
+        .header .menu-icon .navicon:after {
+            top: -5px;
+        }
+
+        /* menu btn */
+
+        .header .menu-btn {
+            display: none;
+        }
+
+        .header .menu-btn:checked ~ .menu {
+            max-height: 240px;
+        }
+
+        .header .menu-btn:checked ~ .menu-icon .navicon {
+            background: transparent;
+        }
+
+        .header .menu-btn:checked ~ .menu-icon .navicon:before {
+            transform: rotate(-45deg);
+        }
+
+        .header .menu-btn:checked ~ .menu-icon .navicon:after {
+            transform: rotate(45deg);
+        }
+
+        .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+        .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+            top: 0;
+        }
+    }
+    /* 48em = 768px */
+
+    @media (min-width: 48em) {
+        .header li {
+            float: left;
+        }
+        .header li a {
+            /*padding: 20px 30px;*/
+        }
+        .header .menu {
+            clear: none;
+            /*float: right;*/
+            max-height: none;
+        }
+        .header .menu-icon {
+            display: none;
+        }
+        .parent {
+            display: grid;
+            grid-template-columns: 10% repeat(4, 20%) 10%;
+            grid-template-rows: 10% repeat(4, 17.5%) 20%;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'El Messiri', sans-serif;
+            justify-items: center;
+
+
+        }
+
+        .div1 {
+            grid-area: 2 / 3 / 4 / 5;
+        }
+        .div2 {
+            grid-area: 4 / 2 / 5 / 6;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            letter-spacing: .5em;
+            /*text-shadow: 0 0 6px #FFFFFF;*/
+
+        }
+        .div3 {
+            grid-area: 5 / 2 / 6 / 6;
+            letter-spacing: .15em;
+        }
+        .div4 { grid-area: 7 / 2 / 8 / 6;
+        }
+        h1{
+            font-size: 4.5em;
+            margin-top: 1em;
+        }
+        ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        li{
+            list-style-type: none;
+            margin-top: 1em;
+            padding-right: .5em;
+            font-size: 1.35em;
+        }
+        a{
+            color: white;
+        }
+    }
+
+
+
+
 </style>
 
 <body class="parent">
-<a id="top"></a>
+<a id="top" name="home"></a>
+<div class="stars"></div>
+<div class="twinkling"></div>
+<div class="clouds"></div>
 
-            <div class="stars"></div>
-            <div class="twinkling"></div>
-            <div class="clouds"></div>
-
-    <div class="div1">
-        <img src="img/foggy-mountains.jpg" alt="" class="circleImg">
-    </div>
-    <div class="div2">
-        <h1 class="text">Crystal Thibodeau</h1>
-    </div>
-
-            <!-- the entire document -->
-    <div class="div3 text">
-            <nav>
-                <ul class="nav">
-<!--                    <li><a href="#">Home</a></li>-->
-                    <li><a href="#aboutMe">About</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+<div class="div1">
+    <img src="img/foggy-mountains.jpg" alt="" class="circleImg">
+</div>
+<div class="div2">
+    <h1 class="text">Crystal Thibodeau</h1>
 </div>
 
+<!-- the entire document -->
+
+
+
+<header class=" header div3 text">
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <nav>
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#aboutMe">About</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<!--<div class="header">-->
+<!--    <div class="div3 text ">-->
+<!--        <input class="menu-btn" type="checkbox" id="menu-btn" />-->
+<!--        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>-->
+<!--        <nav>-->
+<!--        <ul class="menu">-->
+<!--                    <li><a href="#">Home</a></li>-->
+<!--                    <li><a href="#aboutMe">About</a></li>-->
+<!--                    <li><a href="#resume">Resume</a></li>-->
+<!--                    <li><a href="#portfolio">Portfolio</a></li>-->
+<!--                    <li><a href="#contact">Contact</a></li>-->
+<!--                </ul>-->
+<!--            </nav>-->
+<!--</div>-->
+<!--</div>-->
 
 
 
@@ -377,10 +604,10 @@
     </div>
 
     <div class="fullScreen">
-    <a name="resume"><div class="fullScreenInner"></div></a>
-    <h2>Resume</h2>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus ducimus molestiae nesciunt perferendis sint voluptatum! Cum dolor, earum eligendi enim impedit laudantium maiores nihil, placeat provident quibusdam vitae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi doloribus eligendi facere nihil nobis optio porro quis quo saepe! Earum exercitationem nam officia pariatur repudiandae sit voluptas, voluptatem. Incidunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ducimus maiores voluptates? Aspernatur cupiditate deserunt doloribus ducimus, ea fugit harum hic nostrum perspiciatis placeat porro recusandae repudiandae tempora, temporibus ut.
-</div>
+        <a name="resume"><div class="fullScreenInner"></div></a>
+        <h2>Resume</h2>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus ducimus molestiae nesciunt perferendis sint voluptatum! Cum dolor, earum eligendi enim impedit laudantium maiores nihil, placeat provident quibusdam vitae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi doloribus eligendi facere nihil nobis optio porro quis quo saepe! Earum exercitationem nam officia pariatur repudiandae sit voluptas, voluptatem. Incidunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ducimus maiores voluptates? Aspernatur cupiditate deserunt doloribus ducimus, ea fugit harum hic nostrum perspiciatis placeat porro recusandae repudiandae tempora, temporibus ut.
+    </div>
 
     <div class="fullScreen">
         <a name="portfolio"><div class="fullScreenInner"></div></a>
@@ -391,19 +618,19 @@
     <div class="fullScreen">
         <a name="contact"><div class="fullScreenInner"></div></a>
         <div class="">
-        <h2>Contact</h2>
+            <h2>Contact</h2>
 
-<!--        <div class="transbox">-->
-<!--            <div class="text">-->
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus ducimus molestiae nesciunt perferendis sint voluptatum! Cum dolor, earum eligendi enim impedit laudantium maiores nihil, placeat provident quibusdam vitae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi doloribus eligendi facere nihil nobis optio porro quis quo saepe! Earum exercitationem nam officia pariatur repudiandae sit voluptas, voluptatem. Incidunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ducimus maiores voluptates? Aspernatur cupiditate deserunt doloribus ducimus, ea fugit harum hic nostrum perspiciatis placeat porro recusandae repudiandae tempora, temporibus ut.
-<!--            </div>-->
+            <!--        <div class="transbox">-->
+            <!--            <div class="text">-->
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus ducimus molestiae nesciunt perferendis sint voluptatum! Cum dolor, earum eligendi enim impedit laudantium maiores nihil, placeat provident quibusdam vitae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi doloribus eligendi facere nihil nobis optio porro quis quo saepe! Earum exercitationem nam officia pariatur repudiandae sit voluptas, voluptatem. Incidunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ducimus maiores voluptates? Aspernatur cupiditate deserunt doloribus ducimus, ea fugit harum hic nostrum perspiciatis placeat porro recusandae repudiandae tempora, temporibus ut.
+            <!--            </div>-->
         </div>
-        </div>
-<!--    </div>-->
+    </div>
+    <!--    </div>-->
     <div class="sticky">
         <a href="#top" class="arrow"></a>
     </div>
-    </div>
+</div>
 
 <script>
 
