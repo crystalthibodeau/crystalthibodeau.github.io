@@ -2,12 +2,17 @@
 html {
     scroll-behavior: smooth;
 }
+.img-card{
+    padding: .4em;
+    /*border-radius: 12%;*/
 
+}
 
 .nav {
     font-family: 'El Messiri', sans-serif;
     text-align: center;
     font-weight: 600;
+    padding: 0;
 }
 
 .nav * {
@@ -21,52 +26,51 @@ html {
 }
 
 .nav a {
-    padding: .5em .8em;
-    /*color: rgba(255,255,255,.5);*/
+    padding: .5em ;
     color: #a6afb8;
     position: relative;
     text-decoration: none;
 }
 
-.nav a::before,
-.nav a::after {
-    content: '';
-    height: 14px;
-    width: 14px;
-    position: absolute;
-    transition: all .35s ease;
-    opacity: 0;
-    padding: .5em .8em;
+/*.nav a::before,*/
+/*.nav a::after {*/
+/*    content: '';*/
+/*    height: 4px;*/
+/*    width: 4px;*/
+/*    position: absolute;*/
+/*    transition: all .35s ease;*/
+/*    opacity: 0;*/
+/*    padding: .5em;*/
 
-}
+/*}*/
 
-.nav a::before {
-    content: '';
-    right: 0;
-    top: 0;
-    border-top: 3px solid honeydew;
-    border-right: 3px solid honeydew;
-    transform: translate(-100%, 50%);
-}
+/*.nav a::before {*/
+/*    content: '';*/
+/*    right: 0;*/
+/*    top: 0;*/
+/*    border-top: 3px solid honeydew;*/
+/*    border-right: 3px solid honeydew;*/
+/*    transform: translate(-100%, 50%);*/
+/*}*/
 
-.nav a:after {
-    content: '';
-    left: 0;
-    bottom: 0;
-    border-bottom: 3px solid honeydew;
-    border-left: 3px solid honeydew;
-    transform: translate(100%, -50%)
-}
+/*.nav a:after {*/
+/*    content: '';*/
+/*    left: 0;*/
+/*    bottom: 0;*/
+/*    border-bottom: 3px solid honeydew;*/
+/*    border-left: 3px solid honeydew;*/
+/*    transform: translate(100%, -50%)*/
+/*}*/
 
-.nav a:hover:before,
-.nav a:hover:after{
-    transform: translate(0,0);
-    opacity: 1;
-}
+/*.nav a:hover:before,*/
+/*.nav a:hover:after{*/
+/*    transform: translate(0,0);*/
+/*    opacity: 1;*/
+/*}*/
 
-.nav a:hover {
-    color: honeydew;
-}
+/*.nav a:hover {*/
+/*    color: honeydew;*/
+/*}*/
 /*=========================================GRID INITIALIZATION====================================================*/
 
 *{
@@ -97,13 +101,15 @@ html {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    letter-spacing: .5em;
+    /*letter-spacing: .5em;*/
+    padding: 0;
     /*text-shadow: 0 0 6px #FFFFFF;*/
 
 }
 .div3 {
     grid-area: 5 / 2 / 6 / 6;
-    letter-spacing: .15em;
+    display: flex;
+    /*letter-spacing: .15em;*/
 }
 .div4 { grid-area: 7 / 2 / 8 / 6;
 }
@@ -240,11 +246,10 @@ li{
     /*position: absolute; top: 0; left: 0;*/
 }
 .fullScreenInner{
-    margin-top: 4em;
     width: 100vw;
     position: relative;
     margin-left: -50vw;
-    height: 100px;
+    height: 15px;
     left: 50%;
 }
 .sticky {
@@ -301,26 +306,38 @@ li{
     transform: scale(.8);
 
 }
-
-.transbox {
-    /*margin: 1em;*/
-    padding: 1em;
-    background-color: dimgrey;
-    border: 1px solid black;
-    opacity: 0.4;
-    /*filter: alpha(opacity=60); !* For IE8 and earlier *!*/
-}
 .flex-center{
     position: absolute;
     display: flex;
-    /*flex-direction: row;*/
     justify-content:center;
-    /*position: center;*/
-    /*justify-items: center;*/
     flex-direction: column;
     margin: 0;
     padding: 0;
     text-align: center;
-    /*letter-spacing: .5em;*/
+}
+ .grid {
+     padding-top: 1em;
+     padding-bottom: 1em;
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+     grid-gap: 20px;
+     align-items: stretch;
+ }
+.grid > article {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+}
+.grid > article img {
+    max-width: 100%;
+}
+.text {
+    padding: 0 20px 20px;
+}
+.text > button {
+    background: gray;
+    border: 0;
+    color: white;
+    padding: 10px;
+    width: 100%;
 }
 /*==============================================END OF STYLING====================================================*/
