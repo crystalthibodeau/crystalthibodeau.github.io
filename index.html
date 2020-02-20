@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=El+Messiri&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/index.media-query.css">
-
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 
 <body class="parent">
@@ -188,8 +188,16 @@
 
 
 <script>
-
-
+    $(window).scroll(function(){
+        var threshold = 200; // number of pixels before bottom of page that you want to start fading
+        var op = $(window).scrollTop() / threshold;
+        if( op <= 0 ){
+            $(".sticky").hide();
+        } else {
+            $(".sticky").show();
+        }
+        $(".sticky").css("opacity", op );
+    });
 </script>
 </body>
 </html>
