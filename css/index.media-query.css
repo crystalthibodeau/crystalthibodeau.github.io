@@ -43,7 +43,13 @@
     }
 
 }
-@media (min-width: 320px) {
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) { /* STYLES GO HERE */
+/*}*/
+
+
+/*@media (min-width: 320px) {*/
     .parent {
         display: grid;
         grid-template-columns: 10% repeat(4, 20%) 10%;
@@ -67,8 +73,6 @@
     }
     li{
         list-style-type: none;
-        /*margin-top: 0;*/
-        /*padding-right: .5em;*/
         font-size: .75em;
     }
     .circleImg{
@@ -76,17 +80,10 @@
         z-index: 5;
         border-radius: 50%;
         background-size: cover;
-        height: 14em;
-        width: 14em;
+        height: 10em;
+        width: 10em;
         font-weight: 700;
     }
-    /*.div2 > .text{*/
-    /*    font-size: 1.6em;*/
-    /*    flex-direction: row;*/
-    /*    justify-content: center;*/
-    /*    justify-items: center;*/
-    /*    align-content: center;*/
-    /*}*/
     ul{
         display: flex;
     }

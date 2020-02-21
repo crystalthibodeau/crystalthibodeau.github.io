@@ -9,6 +9,10 @@
     <link href="https://fonts.googleapis.com/css?family=El+Messiri&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/index.media-query.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css
+
+">
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 
@@ -51,16 +55,31 @@
         <a name="contact"><div class="fullScreenInner"></div></a>
         <div class="">
             <h2>Contact</h2>
-
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus ducimus molestiae nesciunt perferendis sint voluptatum! Cum dolor, earum eligendi enim impedit laudantium maiores nihil, placeat provident quibusdam vitae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi doloribus eligendi facere nihil nobis optio porro quis quo saepe! Earum exercitationem nam officia pariatur repudiandae sit voluptas, voluptatem. Incidunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ducimus maiores voluptates? Aspernatur cupiditate deserunt doloribus ducimus, ea fugit harum hic nostrum perspiciatis placeat porro recusandae repudiandae tempora, temporibus ut.
+           <div class="box flex">
+               <i class="fas fa-phone-square-alt fa-6x icon1"></i>
+               <i class="fas fa-envelope fa-6x"></i>
+               <i class="fab fa-linkedin fa-6x"></i>
+               <i class="fab fa-github fa-6x iconLast"></i>
+           </div>
+
+
         </div>
     </div>
 
     <div class="fullScreen">
     <a name="resume"><div class="fullScreenInner"></div></a>
     <h2>Resume</h2>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus ducimus molestiae nesciunt perferendis sint voluptatum! Cum dolor, earum eligendi enim impedit laudantium maiores nihil, placeat provident quibusdam vitae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi doloribus eligendi facere nihil nobis optio porro quis quo saepe! Earum exercitationem nam officia pariatur repudiandae sit voluptas, voluptatem. Incidunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ducimus maiores voluptates? Aspernatur cupiditate deserunt doloribus ducimus, ea fugit harum hic nostrum perspiciatis placeat porro recusandae repudiandae tempora, temporibus ut.
-</div>
+<!--    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus ducimus molestiae nesciunt perferendis sint voluptatum! Cum dolor, earum eligendi enim impedit laudantium maiores nihil, placeat provident quibusdam vitae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi doloribus eligendi facere nihil nobis optio porro quis quo saepe! Earum exercitationem nam officia pariatur repudiandae sit voluptas, voluptatem. Incidunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ducimus maiores voluptates? Aspernatur cupiditate deserunt doloribus ducimus, ea fugit harum hic nostrum perspiciatis placeat porro recusandae repudiandae tempora, temporibus ut.-->
+        <div class="box flex">
+            <object data="img/Crystal_Thibodeau_V2.pdf" type="application/pdf" class="resume">
+                <p>It appears you don't have a PDF plugin for this browser.
+                    No biggie... you can <a href="img/Crystal_Thibodeau_V2.pdf">click here to
+                        download the PDF file.</a></p>
+            </object>
+        </div>
+
+    </div>
 
     <div class="fullScreen">
         <a name="portfolio"><div class="fullScreenInner"></div></a>
@@ -163,20 +182,6 @@
 
                 </div>
             </article>
-            <article>
-                <img src="/pix/samples/15l.jpg" alt="Sample photo">
-                <div class="text">
-                    <h3>Dark Mode</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, beatae consectetur vitae.</p>
-                    <button>View App</button>
-                    <br>
-                    <br>
-                    <button>View on Github</button>
-
-
-                </div>
-            </article>
-
         </div>
 
 
@@ -188,8 +193,9 @@
 
 
 <script>
+    $(".sticky").hide();
     $(window).scroll(function(){
-        var threshold = 200; // number of pixels before bottom of page that you want to start fading
+        var threshold = 200;
         var op = $(window).scrollTop() / threshold;
         if( op <= 0 ){
             $(".sticky").hide();
