@@ -331,9 +331,9 @@ li{
 }
 
 .box {
-    padding: .5rem;
+    /*padding: .5rem;*/
     height: 300px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.03);
+    /*box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.03);*/
     border-radius: 4px;
 }
 i {
@@ -343,13 +343,24 @@ i {
 }
 .resume{
     width: 650px;
-    height:600px;
-    border:0px;
-    border-width:0px;
+    height:650px;
+    /*border:0px;*/
+    /*border-width:0px;*/
     margin-bottom:5px;
+    outline: none;
+    /*max-height: 100%;*/
     max-width: 100%;
 }
 .notBlue{
     color: white;
 }
+i:hover{
+    color: steelblue;
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.center-text{
+    text-align: center;
+}
+
 /*==============================================END OF STYLING====================================================*/
+/* Small devices (phones and pocket devices, 576 and up) */
