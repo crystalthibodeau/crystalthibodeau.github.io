@@ -342,11 +342,12 @@ i {
     padding: 14px;
 }
 .resume{
+    margin-bottom: 4em;
     /*width: 650px;*/
     /*height:650px;*/
     /*border:0px;*/
     /*border-width:0px;*/
-    margin-bottom:5px;
+    /*margin-bottom:5px;*/
     outline: none;
     max-height: 100%;
     max-width: 100%;
