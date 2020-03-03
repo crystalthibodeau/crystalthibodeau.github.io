@@ -4,17 +4,6 @@ html {
 }
 
 
-
-#mobile-contact{
-    display: none;
-}
-#desktop-contact{
-    display: flex;
-}
-
-
-
-
 .img-card{
     padding: .7em;
     /*border-radius: 12%;*/
@@ -405,7 +394,7 @@ i:hover{
     /*font-size: 12vw;*/
     /*text-align: center;*/
     /*padding-top: 42vw;*/
-    flex: 0 0 100%;
+    flex:100%;
     height: 100vh;
 }
 
