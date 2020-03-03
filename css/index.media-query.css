@@ -59,7 +59,9 @@ and (max-width : 568px) { /* STYLES GO HERE */
     .grid > article img {
         max-width: 100%;
     }
-
+    .bottom-padding-contact{
+        padding-bottom: 5em;
+    }
 /*@media (min-width: 320px) {*/
     .parent {
         display: grid;
