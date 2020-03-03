@@ -120,6 +120,9 @@ and (max-width : 568px) { /* STYLES GO HERE */
 
 }
 @media (min-width: 569px) {
+    #container {
+        padding-top: 0;
+    }
 
     .parent {
         display: grid;
@@ -218,6 +221,9 @@ and (max-width : 568px) { /* STYLES GO HERE */
         color: steelblue;
         transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
     }
+    #container {
+        padding-top: 0;
+    }
 }
 
 @media (min-width: 992px) {
@@ -270,6 +276,9 @@ and (max-width : 568px) { /* STYLES GO HERE */
         color: steelblue;
         transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
     }
+    #container {
+        padding-top: 18%;
+    }
 
 }
 
@@ -312,6 +321,9 @@ and (max-width : 568px) { /* STYLES GO HERE */
         height: 16em;
         width: 16em;
         font-weight: 700;
+    }
+    #container {
+        padding-top: 18%;
     }
 
 }
