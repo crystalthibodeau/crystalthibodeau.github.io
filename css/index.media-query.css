@@ -112,8 +112,8 @@ and (max-width : 568px) { /* STYLES GO HERE */
         transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
     }
     .resume{
-        width: 400px;
-        height:400px;
+        width: 200px;
+        height:200px;
         outline: none;
     }
 
