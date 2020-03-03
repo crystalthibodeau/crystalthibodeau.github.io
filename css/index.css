@@ -388,7 +388,7 @@ i:hover{
     display: flex;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
-    padding-top: 18%;
+    padding-top: 0;
 }
 
 .item {
@@ -552,4 +552,7 @@ i:hover{
 .box2 .innerFlex {
     width: 100px;
     height: 100px;
+}
+.top-padding-contact{
+    padding-top: 15%;
 }
