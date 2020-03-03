@@ -9,11 +9,11 @@
     <link href="https://fonts.googleapis.com/css?family=El+Messiri&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/index.media-query.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css
-
-">
-
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="/extLibs/http_ajax.googleapis.com_ajax_libs_jquery_3.4.1_jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+<!--    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>-->
 </head>
 
 <body class="parent">
@@ -212,16 +212,20 @@
 
 
 <script>
-    $(".sticky").hide();
-    $(window).scroll(function(){
-        var threshold = 200;
-        var op = $(window).scrollTop() / threshold;
-        if( op <= 0 ){
-            $(".sticky").hide();
-        } else {
-            $(".sticky").show();
-        }
-        $(".sticky").css("opacity", op );
+    window.jQuery || document.write('<script src="http://mysite.com/jquery.min.js"><\/script>');
+    $(document).ready(function(){
+        $(".sticky").hide();
+        $(window).scroll(function(){
+            var threshold = 200;
+            var op = $(window).scrollTop() / threshold;
+            if( op <= 0 ){
+                $(".sticky").hide();
+            } else {
+                $(".sticky").show();
+            }
+            $(".sticky").css("opacity", op );
+
+        });
 
     });
 
