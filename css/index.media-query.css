@@ -84,13 +84,13 @@ and (max-width : 568px) { /* STYLES GO HERE */
         width: 12em;
         font-weight: 700;
     }
-    ul{
-        display: flex;
-    }
-    li{
-        list-style-type: none;
-        font-size: .75em;
-    }
+    /*ul{*/
+    /*    display: flex;*/
+    /*}*/
+    /*li{*/
+    /*    list-style-type: none;*/
+    /*    font-size: .75em;*/
+    /*}*/
     nav{
         padding-top: 2em;
         flex-direction: row;
@@ -106,6 +106,17 @@ and (max-width : 568px) { /* STYLES GO HERE */
     i:hover{
         color: steelblue;
         transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+    .resume{
+        /*padding-bottom: 6em;*/
+        width: 400px;
+        height:400px;
+        /*border:0px;*/
+        /*border-width:0px;*/
+        /*margin-bottom:5px;*/
+        outline: none;
+        /*max-height: 100%;*/
+        /*max-width: 100%;*/
     }
 
 
