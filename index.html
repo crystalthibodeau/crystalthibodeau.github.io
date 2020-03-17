@@ -7,8 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crystal Thibodeau</title>
     <link href="https://fonts.googleapis.com/css?family=El+Messiri&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/index.media-query.css">
+<!--    <link rel="stylesheet" href="css/index.css">-->
+<!--    <link rel="stylesheet" href="css/index.media-query.css">-->
+    <link rel="stylesheet" href="css/updated-styling.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="/extLibs/http_ajax.googleapis.com_ajax_libs_jquery_3.4.1_jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -16,68 +17,58 @@
 <!--    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>-->
 </head>
 
-<body class="parent">
+<body class="parent cf">
+<div class="nav">
+    <nav>
+        <ul class="nav">
+            <li><a href="#aboutMe">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+        </ul>
+    </nav>
+</div>
 <a id="top"></a>
 
             <div class="stars"></div>
             <div class="twinkling"></div>
             <div class="clouds"></div>
 
-    <div class="div1">
+    <div class="div1 flex-center">
         <img src="img/foggy-mountains.jpg" alt="" class="circleImg">
     </div>
-    <div class="div2">
-        <h1 class="text">Crystal Thibodeau</h1>
+    <div class="div2 text" style="text-align: center">
+        <h1>Crystal Thibodeau</h1>
+        <h2><em>"If you think you can do a thing or think you can't do a thing, you're right."</em>-Henry Ford</h2>
+
     </div>
 
-    <div class="div3 text">
-<!--        <header class="header">-->
-<!--            <a href="" class="logo">CSS Nav</a>-->
-<!--            <input class="menu-btn" type="checkbox" id="menu-btn" />-->
-<!--            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>-->
-<!--            <ul class="menu">-->
-<!--                <li><a href="#work">Our Work</a></li>-->
-<!--                <li><a href="#about">About</a></li>-->
-<!--                <li><a href="#careers">Careers</a></li>-->
-<!--                <li><a href="#contact">Contact</a></li>-->
-<!--            </ul>-->
-<!--        </header>-->
-            <nav>
-                <ul class="nav">
-                    <li><a href="#aboutMe">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                </ul>
-            </nav>
+<div class="div3">
 </div>
-
-
 
 
 <div class="text div4">
     <div class="fullScreen">
         <a name="aboutMe"><div class="fullScreenInner"></div></a>
+        <div>
         <h2 class="center-text">About Me</h2>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus ducimus molestiae nesciunt perferendis sint voluptatum! Cum dolor, earum eligendi enim impedit laudantium maiores nihil, placeat provident quibusdam vitae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi doloribus eligendi facere nihil nobis optio porro quis quo saepe! Earum exercitationem nam officia pariatur repudiandae sit voluptas, voluptatem. Incidunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ducimus maiores voluptates? Aspernatur cupiditate deserunt doloribus ducimus, ea fugit harum hic nostrum perspiciatis placeat porro recusandae repudiandae tempora, temporibus ut.
-    </div>
+        </div>
+        </div>
 
     <div class="fullScreen">
         <a name="contact"><div class="fullScreenInner"></div></a>
         <div>
-<!--            <br>-->
-<!--            <br>-->
-<!--            <br>-->
             <h2 class="center-text">Contact</h2>
 
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus ducimus molestiae nesciunt perferendis sint voluptatum! Cum dolor, earum eligendi enim impedit laudantium maiores nihilIncidunt!
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus ducimus molestiae nesciunt perferendis sint voluptatum! Cum dolor, earum eligendi enim impedit laudantium maiores nihilIncidunt!
-            <div class="box flex" id="container">
+            <div class="box flex" id="">
                 <div>
                     <a href="tel:830-446-6854" class="notBlue item"><i class="fas fa-phone-square-alt fa-6x"></i></a>
                     <a href="mailto:crystalthibodeau2@gmail.com" target="_blank" class="notBlue item"><i class="fas fa-envelope fa-6x"></i></a>
                 </div>
-                <div class="bottom-padding-contact">
+                <div class="">
                     <a href="https://www.linkedin.com/in/crystal-thibodeau-7414b81a2/" target="_blank" class="notBlue item"><i class="fab fa-linkedin fa-6x"></i></a>
                     <a href="https://github.com/crystalthibodeau" target="_blank" class="notBlue item"><i class="fab fa-github fa-6x"></i></a>
                 </div>
@@ -87,7 +78,7 @@
         </div>
     </div>
 
-    <div class="fullScreen resume-padding">
+    <div class="fullScreen">
     <a name="resume"><div class="fullScreenInner"></div></a>
        <div class="center-text">
         <h2>Resume</h2>
@@ -210,7 +201,7 @@
 
 
     </div>
-    <div class="sticky">
+    <div class="sticky-arrow">
         <a href="#top" class="arrow"></a>
     </div>
     </div>
@@ -219,22 +210,18 @@
 <script>
     window.jQuery || document.write('<script src="http://mysite.com/jquery.min.js"><\/script>');
     $(document).ready(function(){
-        $(".sticky").hide();
-        $(window).scroll(function(){
-            var threshold = 200;
-            var op = $(window).scrollTop() / threshold;
-            if( op <= 0 ){
-                $(".sticky").hide();
+        $(".sticky-arrow").hide();
+
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('nav').addClass('sticky');
+                        $(".sticky-arrow").show();
             } else {
-                $(".sticky").show();
+                $('nav').removeClass('sticky');
+                        $(".sticky-arrow").hide();
             }
-            $(".sticky").css("opacity", op );
-
         });
-
     });
-
-
 </script>
 </body>
 </html>
