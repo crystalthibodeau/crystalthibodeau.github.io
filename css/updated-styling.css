@@ -33,12 +33,12 @@ body{
     justify-content: space-evenly;
     align-items: center;
     text-transform: uppercase;
-    background-color: white;
+    background-color: black;
     z-index: 2;
     grid-area: 1 / 1 / 2 / 7;
 }
 .nav a {
-    color: black;
+    color: white;
     display: block;
     text-decoration: none;
 }
@@ -57,7 +57,7 @@ nav ul{
 .div3 { grid-area: 5 / 2 / 6 / 6; }
 .div4 {grid-area: 6 / 2 / 7 / 6; }
 .padding-top{
-    padding-top: 6em;
+    padding-top: 8em;
 }
 
 
@@ -184,9 +184,9 @@ nav ul{
 .fullScreenInner{
     width: 100vw;
     position: relative;
-    margin-left: -50vw;
-    height: 15px;
-    left: 50%;
+    /*margin-left: -50vw;*/
+    height: 1em;
+    /*left: 50%;*/
 }
 /*==============================================Arrow===============================================*/
 
@@ -257,19 +257,33 @@ nav ul{
 .grid > article {
     border: 1px solid #ccc;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    background-color: #000;
+    transition: all .4s ease-in-out;
+
+}
+article:hover{
+    transform: scale(1.05);
+    border: 4px solid #2e71a5;
+    background-color: #2e71a5;
 }
 .grid > article img {
     max-width: 100%;
 }
-.text {
+article > .text {
+    color: white;
+    text-shadow: none;
     padding: 0 20px 20px;
 }
 .text > button {
-    background: gray;
+    background: slategrey;
     border: 0;
     color: white;
     padding: 10px;
     width: 100%;
+}
+.text > button:hover {
+    color: black;
+    background-color: lightgray;
 }
 /*==============================================Icons===============================================*/
 .icon{
@@ -307,7 +321,7 @@ i:hover{
 
 .header {
     top: 0;
-    background-color: #fff;
+    background-color: black;
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
     position: fixed;
     width: 100%;
@@ -319,7 +333,7 @@ i:hover{
     padding: 0;
     list-style: none;
     overflow: hidden;
-    background-color: #fff;
+    background-color: black;
 }
 
 .header li a {
@@ -332,6 +346,7 @@ i:hover{
 .header li a:hover,
 .header .menu-btn:hover {
     background-color: #f4f4f4;
+    color: black;
 }
 
 /* menu */
@@ -354,7 +369,7 @@ i:hover{
 }
 
 .header .menu-icon .navicon {
-    background: #333;
+    background: #fff;
     display: block;
     height: 2px;
     position: relative;
@@ -364,7 +379,7 @@ i:hover{
 
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
-    background: #333;
+    background: #fff;
     content: '';
     display: block;
     height: 100%;
@@ -425,4 +440,13 @@ i:hover{
     .header .menu-icon {
         display: none;
     }
+}
+
+
+
+.anchor{
+    display: block;
+    height: 115px; /*same height as header*/
+    margin-top: -115px; /*same height as header*/
+    visibility: hidden;
 }
