@@ -37,7 +37,7 @@
             <div class="clouds"></div>
 
     <div class="div1 flex-center">
-        <img src="img/foggy-mountains.jpg" alt="" class="circleImg">
+        <img src="img/codeup_2020-0046-2.jpg" alt="" class="circleImg">
     </div>
     <div class="div2 text" style="text-align: center">
         <h1>Crystal Thibodeau</h1>
@@ -61,15 +61,26 @@
 
             </div>
             <div class="about-flex mobile-hidden">
-<!--                <div>-->
+                <figure class="img-hover-text">
                     <img src="img/IMG_1860.jpg" class="circleImg2 rotateimg180">
-<!--                </div>-->
-<!--                <div>-->
+                    <figcaption>
+                        <p>Crystal and her sister Abby</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="img-hover-text">
                     <img src="img/IMG_2309.JPG" class="circleImg2">
-<!--                </div>-->
-<!--                <div>-->
+                    <figcaption>
+                        <p>Morning fishing with Grandpa</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="img-hover-text">
                     <img src="img/IMG_0772.jpg" class="circleImg2 rotateimg180">
-<!--                </div>-->
+                    <figcaption>
+                        <p>Crystal's brother Will and niece Stephanie</p>
+                    </figcaption>
+                </figure>
            </div>
         </div>
 
@@ -235,14 +246,13 @@
         $(".sticky-arrow").hide();
 
         $(window).scroll(function() {
-            if ($(this).scrollTop() > 200) {
-                $('nav').addClass('sticky');
+            if ($(this).scrollTop() > 200 && $(this).scrollTop() < 200) {
                         $(".sticky-arrow").show();
             } else {
-                $('nav').removeClass('sticky');
                         $(".sticky-arrow").hide();
             }
         });
+
     });
 </script>
 </body>
