@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To-Do-Tomorrow</title>
+    <link rel="stylesheet" href="css/to-do.style.css">
+</head>
+<body>
+<nav>
+    <div class="boxShadow">
+<!--        target="_blank"-->
+        <a href="to-do-tomorrow.html" target="_blank">Tomorrow</a>
+<!--//        <a href="" >Saved</a>-->
+        <a href="to-do.html" target="_blank">Home</a>
+    </div>
+</nav>
+<div>
+    <div>
+        <div class="intro">
+            <h1>To-Do Tomorrow</h1>
+        </div>
+    </div>
+
+    <div>
+        <div class="helpText">
+            <p id="first">Enter text into the input field to add items to your list.</p>
+            <p id="second">Click the item to mark it as complete.</p>
+            <p id="third">Click the "X" to remove the item from your list.</p>
+        </div>
+    </div>
+
+    <div>
+        <div class="marginTop">
+            <input id="userInput" type="text" class="boxShadow" placeholder="New item...">
+            <button id="enter" class="boxShadow">Add</button>
+        </div>
+    </div>
+
+    <!-- Empty List -->
+    <div>
+        <div class="listItems">
+            <ul>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<script>
+
+    var enterButton = document.getElementById("enter");
+    var input = document.getElementById("userInput");
+    var ul = document.querySelector("ul");
+    var item = document.getElementsByTagName("li");
+
+    function inputLength(){
+        return input.value.length;
+    }
+
+    function listLength(){
+        return item.length;
+    }
+
+    function createListElement() {
+        var li = document.createElement("li"); // creates an element "li"
+        li.appendChild(document.createTextNode(input.value)); //makes text from input field the li text
+        ul.appendChild(li); //adds li to ul
+        input.value = ""; //Reset text input field
+
+
+        //START STRIKETHROUGH
+        // because it's in the function, it only adds it for new items
+        function crossOut() {
+            li.classList.toggle("done");
+        }
+
+        li.addEventListener("click",crossOut);
+        //END STRIKETHROUGH
+
+
+        // START ADD DELETE BUTTON
+        var dBtn = document.createElement("button");
+        dBtn.appendChild(document.createTextNode("X"));
+        li.appendChild(dBtn);
+        dBtn.addEventListener("click", deleteListItem);
+        // END ADD DELETE BUTTON
+
+
+        //ADD CLASS DELETE (DISPLAY: NONE)
+        function deleteListItem(){
+            li.classList.add("delete")
+        }
+        //END ADD CLASS DELETE
+    }
+
+
+    function addListAfterClick(){
+        if (inputLength() > 0) { //makes sure that an empty input field doesn't create a li
+            createListElement();
+        }
+    }
+
+    function addListAfterKeypress(event) {
+        if (inputLength() > 0 && event.which ===13) { //this now looks to see if you hit "enter"/"return"
+            //the 13 is the enter key's keycode, this could also be display by event.keyCode === 13
+            createListElement();
+        }
+    }
+
+
+    enterButton.addEventListener("click",addListAfterClick);
+
+    input.addEventListener("keypress", addListAfterKeypress);
+
+
+
+</script>
+</body>
+</html>

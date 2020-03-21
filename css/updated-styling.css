@@ -56,12 +56,10 @@ nav ul{
 .div2 { grid-area: 4 / 2 / 5 / 6; }
 .div3 { grid-area: 5 / 2 / 6 / 6; }
 .div4 {grid-area: 6 / 2 / 7 / 6; }
+
 .padding-top{
-    padding-top: 8em;
+    padding-top: 8.5em;
 }
-
-
-
 /*=========================================START OF BACKGROUND====================================================*/
 @keyframes move-background {
     from {
@@ -179,14 +177,14 @@ nav ul{
 /*==============================================Div Fullscreen===============================================*/
 
 .fullScreen{
-    width: 95vw; height: 100vh;
+    width: 95vw;
+    height: 100vh;
 }
-.fullScreenInner{
-    width: 100vw;
-    position: relative;
-    /*margin-left: -50vw;*/
-    height: 1em;
-    /*left: 50%;*/
+.anchor{
+    display: block;
+    height: 115px; /*same height as header*/
+    margin-top: -115px; /*same height as header*/
+    visibility: hidden;
 }
 /*==============================================Arrow===============================================*/
 
@@ -274,17 +272,18 @@ article > .text {
     text-shadow: none;
     padding: 0 20px 20px;
 }
-.text > button {
+a > button {
     background: slategrey;
     border: 0;
     color: white;
     padding: 10px;
     width: 100%;
 }
-.text > button:hover {
+a > button:hover {
     color: black;
     background-color: lightgray;
 }
+
 /*==============================================Icons===============================================*/
 .icon{
     color: white;
@@ -292,7 +291,7 @@ article > .text {
 .box.flex {
     display: flex;
     justify-content: center;
-}
+    flex-wrap: wrap;}
 
 .box {
     height: 2em;
@@ -310,6 +309,11 @@ i:hover{
 }
 /*==============================================Resume===============================================*/
 .resume{
+    width: 850px;
+    height: 475px;
+    outline: none;
+}
+object{
     width: 850px;
     height: 475px;
     outline: none;
@@ -442,11 +446,51 @@ i:hover{
     }
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: black;
+}
+.rotateimg180 {
+    -webkit-transform:rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.circleImg2{
+    padding: 2em;
+    z-index: 1;
+    border-radius: 50%;
+    background-size: cover;
+    height: 17em;
+    width: 17em;
+}
+.about-flex{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.margin-bottom{
+    margin-bottom: 2em;
+}
 
+@media (min-width: 375px) {
+    .inner-width{
+        padding-right: 1em;
+        padding-left: 1em;
+    }
+}
+@media (max-width: 400px) {
 
-.anchor{
-    display: block;
-    height: 115px; /*same height as header*/
-    margin-top: -115px; /*same height as header*/
-    visibility: hidden;
+    .padding-bottom {
+        padding-bottom: 4em;
+    }
+}
+@media (max-width: 1024px) {
+    .mobile-hidden{
+        display: none;
+    }
 }
