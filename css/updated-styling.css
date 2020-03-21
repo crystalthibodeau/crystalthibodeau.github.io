@@ -33,12 +33,12 @@ body{
     justify-content: space-evenly;
     align-items: center;
     text-transform: uppercase;
-    background-color: white;
+    background-color: black;
     z-index: 2;
     grid-area: 1 / 1 / 2 / 7;
 }
 .nav a {
-    color: black;
+    color: white;
     display: block;
     text-decoration: none;
 }
@@ -56,12 +56,10 @@ nav ul{
 .div2 { grid-area: 4 / 2 / 5 / 6; }
 .div3 { grid-area: 5 / 2 / 6 / 6; }
 .div4 {grid-area: 6 / 2 / 7 / 6; }
+
 .padding-top{
-    padding-top: 6em;
+    padding-top: 8.5em;
 }
-
-
-
 /*=========================================START OF BACKGROUND====================================================*/
 @keyframes move-background {
     from {
@@ -179,14 +177,14 @@ nav ul{
 /*==============================================Div Fullscreen===============================================*/
 
 .fullScreen{
-    width: 95vw; height: 100vh;
+    width: 95vw;
+    height: 100vh;
 }
-.fullScreenInner{
-    width: 100vw;
-    position: relative;
-    margin-left: -50vw;
-    height: 15px;
-    left: 50%;
+.anchor{
+    display: block;
+    height: 115px; /*same height as header*/
+    margin-top: -115px; /*same height as header*/
+    visibility: hidden;
 }
 /*==============================================Arrow===============================================*/
 
@@ -257,20 +255,35 @@ nav ul{
 .grid > article {
     border: 1px solid #ccc;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    background-color: #000;
+    transition: all .4s ease-in-out;
+
+}
+article:hover{
+    transform: scale(1.05);
+    border: 4px solid #2e71a5;
+    background-color: #2e71a5;
 }
 .grid > article img {
     max-width: 100%;
 }
-.text {
+article > .text {
+    color: white;
+    text-shadow: none;
     padding: 0 20px 20px;
 }
-.text > button {
-    background: gray;
+a > button {
+    background: slategrey;
     border: 0;
     color: white;
     padding: 10px;
     width: 100%;
 }
+a > button:hover {
+    color: black;
+    background-color: lightgray;
+}
+
 /*==============================================Icons===============================================*/
 .icon{
     color: white;
@@ -278,7 +291,7 @@ nav ul{
 .box.flex {
     display: flex;
     justify-content: center;
-}
+    flex-wrap: wrap;}
 
 .box {
     height: 2em;
@@ -300,6 +313,11 @@ i:hover{
     height: 475px;
     outline: none;
 }
+object{
+    width: 850px;
+    height: 475px;
+    outline: none;
+}
 .center-text{
     text-align: center;
 }
@@ -307,7 +325,7 @@ i:hover{
 
 .header {
     top: 0;
-    background-color: #fff;
+    background-color: black;
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
     position: fixed;
     width: 100%;
@@ -319,7 +337,7 @@ i:hover{
     padding: 0;
     list-style: none;
     overflow: hidden;
-    background-color: #fff;
+    background-color: black;
 }
 
 .header li a {
@@ -332,6 +350,7 @@ i:hover{
 .header li a:hover,
 .header .menu-btn:hover {
     background-color: #f4f4f4;
+    color: black;
 }
 
 /* menu */
@@ -354,7 +373,7 @@ i:hover{
 }
 
 .header .menu-icon .navicon {
-    background: #333;
+    background: #fff;
     display: block;
     height: 2px;
     position: relative;
@@ -364,7 +383,7 @@ i:hover{
 
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
-    background: #333;
+    background: #fff;
     content: '';
     display: block;
     height: 100%;
@@ -423,6 +442,55 @@ i:hover{
         max-height: 100vh;
     }
     .header .menu-icon {
+        display: none;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: black;
+}
+.rotateimg180 {
+    -webkit-transform:rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.circleImg2{
+    padding: 2em;
+    z-index: 1;
+    border-radius: 50%;
+    background-size: cover;
+    height: 17em;
+    width: 17em;
+}
+.about-flex{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.margin-bottom{
+    margin-bottom: 2em;
+}
+
+@media (min-width: 375px) {
+    .inner-width{
+        padding-right: 1em;
+        padding-left: 1em;
+    }
+}
+@media (max-width: 400px) {
+
+    .padding-bottom {
+        padding-bottom: 4em;
+    }
+}
+@media (max-width: 1024px) {
+    .mobile-hidden{
         display: none;
     }
 }

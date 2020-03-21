@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <!-- Mapbox CSS -->
+    <link src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'>
+    <link rel="stylesheet" href="css/weather-map.css">
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="parent">
+
+
+
+<div class="header ">
+    <div class="textCenter">
+    <h1 id="weatherLocation">San Antonio Weather Forecast</h1>
+    </div>
+</div>
+<div class="header2 textCenter" id="header2">
+<p>Weekly Weather Summary</p>
+</div>
+<div class="weatherCards">
+    <div class="innerDiv1">
+
+
+
+        <div class="f1_container">
+            <div class="f1_card shadow">
+                <div class="front face" id="front1">
+                    <h1>Day 1</h1>
+                </div>
+                <div class="back face center" id="weatherDay1">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="f1_container">
+            <div class="f1_card shadow">
+                <div class="front face" id="front2">
+                    <h1>Day 2</h1>
+                </div>
+                <div class="back face center" id="weatherDay2">
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="f1_container">
+            <div class="f1_card shadow">
+                <div class="front face" id="front3">
+                    <h1>Day 3</h1>
+                </div>
+                <div class="back face center" id="weatherDay3">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="mapped-search search-flex">
+<input type="text" class="form-control mapped-search search-flex width" id="userSearch" placeholder="Find Weather By Address..">
+<button id ="submit" type="button" class="width">Submit</button>
+</div>
+
+<div class="mapped">
+    <div id='map'></div>
+</div>
+
+<!--/*===============================================Script Start==================================================*/-->
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/weather-map.js"></script>
+
+</body>
+</html>
