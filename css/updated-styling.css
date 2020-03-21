@@ -156,6 +156,8 @@ nav ul{
     background-size: cover;
     height: 17em;
     width: 17em;
+    -webkit-filter: grayscale(35%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(35%);
 }
 .flex-center{
     position: absolute;
@@ -308,11 +310,11 @@ i:hover{
     transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 /*==============================================Resume===============================================*/
-.resume{
-    width: 850px;
-    height: 475px;
-    outline: none;
-}
+/*.resume{*/
+/*    width: 850px;*/
+/*    height: 475px;*/
+/*    outline: none;*/
+/*}*/
 object{
     width: 850px;
     height: 475px;
@@ -461,13 +463,19 @@ a:hover{
     transform: rotate(90deg);
 }
 .circleImg2{
-    padding: 2em;
+    /*padding: 2em;*/
+    padding-bottom: 0;
     z-index: 1;
     border-radius: 50%;
     background-size: cover;
     height: 17em;
     width: 17em;
 }
+.circleImg2:hover{
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
 .about-flex{
     display: flex;
     justify-content: center;
@@ -493,4 +501,21 @@ a:hover{
     .mobile-hidden{
         display: none;
     }
+}
+
+/* The caption text inside of the .img-hover-text */
+.img-hover-text figcaption{
+    box-sizing: border-box;
+    opacity: 0;
+    transition: .5s;
+    margin: 0;
+}
+figcaption p{
+    width: 85%;
+    padding-left: 2em;
+}
+/* :hover pseudo selector used on parent container to then target figcaption child */
+.img-hover-text:hover figcaption {
+    /* Makes the element completely visible */
+    opacity: 1;
 }
