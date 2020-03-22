@@ -468,8 +468,8 @@ a:hover{
     z-index: 1;
     border-radius: 50%;
     background-size: cover;
-    height: 17em;
-    width: 17em;
+    height: 19em;
+    width: 19em;
 }
 .circleImg2:hover{
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
@@ -511,8 +511,8 @@ a:hover{
     margin: 0;
 }
 figcaption p{
-    width: 85%;
-    padding-left: 2em;
+    width: 80%;
+    padding-left: 3.5em;
 }
 /* :hover pseudo selector used on parent container to then target figcaption child */
 .img-hover-text:hover figcaption {

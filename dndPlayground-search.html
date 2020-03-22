@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D&D Search</title>
+    <link rel="stylesheet" href="css/dnd-search.css">
+
+</head>
+<!--<body>-->
+<body class="background">
+
+<!--================================PARENT GRID======================================================================-->
+<div class="parent">
+
+    <!--================================TITLE========================================================================-->
+
+<!--    <div class="title" id="title"><h1 class="right">-->
+<!--        Playground</h1></div>-->
+    <!--================================NAV START====================================================================-->
+
+    <div class="navBar">
+        <header class="header">
+            <a href="" class="logo">D&D Playground</a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li><a href="dndPlayground-character.html" target="_blank">Character</a></li>
+                <li><a href="dndPlayground-search.html" target="_blank">Search</a></li>
+            </ul>
+        </header>
+    </div>
+
+    <!--================================CAMPAIGN TITLE===============================================================-->
+
+<!--    <div class="campName"> <h1>Search</h1></div>-->
+    <!--================================MISSION STMT=================================================================-->
+<div class="search-section search center-flex">
+    <div>
+        <label for="search-selection">Search under: </label>
+        <select id="search-selection">
+            <option value="ability-scores">Abilities</option>
+            <option value="classes">Classes</option>
+            <option value="conditions">Conditions</option>
+            <option value="magicitems">Magic Items</option>
+            <option value="languages">Languages</option>
+            <option value="monsters">Monsters</option>
+            <option value="races">Races</option>
+            <option value="skills">Skills</option>
+            <option value="spells">Spells</option>
+            <option value="weapons">Weapons</option>
+            <option value="search">SEARCH</option>
+        </select>
+        <br>
+</div>
+    <!--================================DICE ROLL====================================================================-->
+    <div>
+        <label for="search-string">Search For:</label>
+
+        <input type="text"  id="search-string" class="width" maxlength="100" placeholder="Enter search string here..." onsubmit="searchedFor()">
+
+        <button id="buttonSearch" >Search</button>
+
+    </div>
+
+</div>
+
+    <div id="names" class="search-results card">
+        <div class="dragon"></div>
+    </div>
+
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+
+<script>
+    $(document).ready(function() {
+
+        var url = 'https://api.open5e.com/';
+
+        $('#search-selection').change(function() {
+            var searchSelection = document.getElementById('search-selection').value.toLowerCase();
+
+            var searchString = document.getElementById('search-string').value.toLowerCase();
+           document.getElementById('search-string').value = "";
+            console.log("searchSelection", searchSelection);
+            $.ajax(url + searchSelection).done(function(data) {
+
+                var results = data.results;
+                console.log(results);
+                    var namesArray = [];
+                for(var i =0; i < results.length; i++) {
+                    namesArray.push(results[i].name);
+                    $('#names').append("<div class='linkName' id=\'" + i + "\'><h1>" + namesArray[i] + "</h1></div>"); // add the html string to the body element.
+
+                }
+                $("div.linkName").append(function(){
+                    var sectionOne = "<div class='hit_dice newClass'><h5>" + data.results[this.id].hit_dice + "</h5></div>";
+                    var sectionTwo = "<div class='hp_at_1st_level newClass'><h5>" + data.results[this.id].hp_at_1st_level + "</h5></div>";
+                    $(this).append(sectionOne); // add the html string to the body element.
+                    $(this).append(sectionTwo); // add the html string to the body element.
+                });
+
+                $("div.linkName").click(function() {
+                    $(this).children('.hit_dice').toggleClass('newClass');
+                    $(this).children('.hp_at_1st_level').toggleClass('newClass');
+                });
+
+            });
+
+
+        });
+    });
+
+
+</script>
+</body>
+</html>

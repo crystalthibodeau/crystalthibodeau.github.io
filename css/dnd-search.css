@@ -1,0 +1,243 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.parent {
+    display: grid;
+    grid-template-columns: 5% repeat(3, 30%) 5%;
+    grid-template-rows: 8% 6% 39% 39% 8%;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100vh;
+    width: 100vw;
+}
+.linkName h1:hover{
+    color: red;
+    font-size: 2.3em;
+}
+.navBar {
+    grid-area: 1 / 1 / 2 / 6;
+}
+.search-section {
+    grid-area: 2 / 2 / 3 / 5;
+}
+.search-results {
+    grid-area: 3 / 2 / 5 / 5;
+    /*margin: 2em;*/
+    padding: 2em;
+}
+.newClass{
+    display: none;
+}
+.search{
+    align-content: center;
+    font-size: 1.2em;
+    /*margin-left: 2em;*/
+}
+.search> input{
+    width: 200px;
+}
+.center-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.center-text{
+    text-align: center;
+}
+.link-name{
+    padding: 2em;
+    /*margin: 2em;*/
+}
+.card {
+    text-align:left;
+    /*margin-right: 40%;*/
+    /*margin-left: 40%;*/
+    /*width: 350px;*/
+    /*height: 400px;*/
+    background: white;
+    border-radius: 15px;
+    /*box-shadow: 0px 0px 0px grey;*/
+    -webkit-transition:  box-shadow .6s ease-out;
+    box-shadow: .8px .9px 3px black;
+    overflow: auto;
+
+
+}
+.card:hover{
+    box-shadow: 1px 8px 20px black;
+    -webkit-transition:  box-shadow .6s ease-in;
+}
+.background{
+    background-color: lightgray;
+}
+
+button{
+    width: auto;
+    padding: .3em;
+    background: lightgray;
+    color: black;
+    border: 1px solid black;
+    box-shadow: 0 0 5px black;
+    font-weight: bold;
+    font-size: .55em;
+}
+
+a {
+    color: white;
+}
+.header {
+    background-color: black;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: black;
+}
+
+.header li a {
+    display: block;
+    border-right: 1px solid #f4f4f4;
+    text-decoration: none;
+    padding: 2em;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+    background-color: #f4f4f4;
+}
+
+.header .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+}
+
+/* menu */
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+
+.header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 22px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+    top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+    top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+.dragon{
+    background-image: url(../img/monster-dnd.png);
+
+    /*background-image: url(../img/ice-dragon.png);*/
+
+    /*background-image: url(../img/7be08fb149953d6d00b8fabefc51dd21.png);!*crop out logo*!*/
+
+    /*background-image: url(../img/Winter_wolf.png);*/
+    /*background-image: url(../img/gibbering-mouther.png);*/
+
+    /*background-image: url(../img/dragon.png);*/
+
+    /*background-image: url(../img/brown-character-clip-art-png-clip-art.png);*/
+
+    /*background-image: url(../img/kisspng-dungeons-dragons-miniatures-game-pathfinder-role-drac-5b336f56b2e9d7.2384455615300974947328.jpg);*/
+
+    /*background-image: url(../img/illithid.png);*/
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: 1em;
+    left: 65em;
+    z-index: 7;
+    height: 15em;
+    width: 46em;
+    background-size: contain;
+    /*-webkit-transform: scaleX(-1);*/
+    /*transform: scaleX(-1);*/
+}
+@media (min-width: 48em) {
+    .header li {
+        float: left;
+    }
+    .header li a {
+        padding: 20px 30px;
+    }
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon {
+        display: none;
+    }
+}
