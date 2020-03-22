@@ -1,0 +1,107 @@
+@media only screen and (min-width: 1024px){
+
+    body {
+        background-color: #EADECF;
+        background-image: none;
+        padding: 0;
+        margin: 0;
+    }
+    .parent {
+        display: grid;
+        height: 100vh;
+        width: 100vw;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 15% repeat(2, 1fr);
+        font-family: Courier;
+    }
+    .div1 {grid-area: 1 / 1 / 2 / 3;}
+    .div2 {
+        grid-area: 2 / 2 / 3 / 3;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+    .div3 { grid-area: 3 / 2 / 4 / 3;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+    .div4 { grid-area: 2 / 1 / 4 / 2;
+        width: 100%;
+        /*display: flex;*/
+        /*justify-content: center;*/
+        /*align-items: center*/
+        margin-top: 5em;
+    }
+    #header{
+        text-align: center;
+        font-size: 3em;
+    }
+    .iconImg {
+        visibility: visible;
+        margin-top: 10px;
+        width: 3em;
+        height: 3em;
+        background: none;
+        position: absolute;
+        left: 20em;
+        top: 2em;
+        z-index: 2;
+    }
+    .iconImg2 {
+        visibility: visible;
+        margin-top: 10px;
+        width: 3em;
+        height:3em;
+        background: none;
+        position: absolute;
+        right: 20em;
+        top: 2em;
+        z-index: 2;
+    }
+
+    .rotate1 {
+        display: inline-block;
+        animation: rotation1 3s alternate;
+    }
+    .rotate2 {
+        display: inline-block;
+        animation: rotation2 3s alternate-reverse;
+    }
+    .animated {
+        -webkit-animation-duration: 5s;
+        animation-duration: 5s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+    @-webkit-keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+    @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+    .fadeIn {
+        -webkit-animation-name: fadeIn;
+        animation-name: fadeIn;
+    }
+    @keyframes rotation1 {
+        0% {
+            transform: rotate(0deg);
+        }
+        50% {
+            transform: rotate(80deg);
+        }
+    }
+    @keyframes rotation2 {
+        0% {
+            transform: rotate(0deg);
+        }
+        50% {
+            transform: rotate(-80deg);
+        }
+    }
+}
