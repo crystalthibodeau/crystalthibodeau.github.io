@@ -498,6 +498,12 @@ a:hover{
     .padding-bottom {
         padding-bottom: 4em;
     }
+    .resume{
+        min-width: 400px;
+        min-height: 475px;
+        outline: none;
+        overflow: scroll;
+    }
 }
 @media (max-width: 1024px) {
     .mobile-hidden{
