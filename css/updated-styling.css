@@ -499,8 +499,8 @@ a:hover{
         padding-bottom: 4em;
     }
     .resume{
-        min-width: 400px;
-        min-height: 475px;
+        max-width: 320px;
+        max-height: 475px;
         outline: none;
         overflow: scroll;
     }
