@@ -69,20 +69,20 @@
                 'background-size' : 'cover'
             });
             front1.html(
-                "<div>" +
+                "<div class='fronted'>" +
                 "<h3 class='paddingNone'>" +  "Today: " + joined1 + "</h3>" +
                 "<p class='paddingNone'>" + day1Summary + "</p>" +
                 "<p class='paddingNone'>" + "Current Temperature of " + parseInt(data.currently.temperature) + "°" + "</p>" +
                 "</div>"
             );
             front2.html(
-                "<div>" +
+                "<div class='fronted'>" +
                 "<h3 class='paddingNone'>" + joined2 + "</h3>" +
                 "<p class='paddingNone'>" + day2Summary + "</p>" +
                 "</div>"
             );
             front3.html(
-                "<div>" +
+                "<div class='fronted'>" +
                 "<h3 class='paddingNone'>" + joined3 + "</h3>" +
                 "<p class='paddingNone'>" + day3Summary + "</p>" +
                 "</div>"
