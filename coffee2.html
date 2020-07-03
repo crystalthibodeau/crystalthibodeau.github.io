@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coffee Project</title>
+    <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+<div class="parent">
+    <!--============================================== DIV 1 SECTION ====================================================-->
+    <div class="div1">
+    </div>
+    <!--============================================== DIV 2 SECTION ====================================================-->
+    <div class="div2">
+        <form>
+            <h3>Search Coffee</h3>
+
+            <label for="roast-selection" class="labels">Roast</label>
+            <br>
+            <select id="roast-selection" class="selectOptions">
+                <option>All</option>
+                <option>Light</option>
+                <option>Medium</option>
+                <option>Dark</option>
+            </select>
+            <br>
+            <label for="coffee-filter" class="labels">Coffee Name</label>
+            <br>
+            <input type="text" id="coffee-filter" class="searchBar" onkeyup="updateCoffees(roastSelection.value)" placeholder="Search...">
+            <br>
+        </form>
+    </div>
+
+    <!--============================================== DIV 3 SECTION ====================================================-->
+
+    <div class="div3 box">
+        <form>
+            <h3 class="h3Style">Add a Coffee</h3>
+            <label for="new-roast" class="labels">Roast Type</label>
+            <br>
+            <select id="new-roast" class="selectOptions">
+                <option>Light</option>
+                <option>Medium</option>
+                <option>Dark</option>
+            </select>
+            <br>
+            <label for="new-name" class="labels">Coffee Name</label>
+            <br>
+            <input type="text" id="new-name" class="searchBar" placeholder="Enter Coffee Name...">
+            <br>
+            <button type="submit" id="submit" class="submit">Submit</button>
+            <br>
+        </form>
+
+    </div>
+
+    <!--============================================== DIV 4 SECTION ====================================================-->
+
+    <div id="coffee" class="div4 box"></div>
+
+    <!--=================================================================================================================-->
+</div>
+<script src="js/crystal.js"></script>
+</body>
+</html>
