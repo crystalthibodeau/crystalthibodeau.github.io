@@ -1,74 +1,276 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
+    <!-- Required meta tags -->
     <meta charset="UTF-8">
-    <title>Coffee Project</title>
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/responsive-queries.css">
-    <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Coffee Time</title>
+
+    <style>
+        .light-text{
+            color: #B5926E;
+        }
+        a:hover{
+            color: #00aba9;
+        }
+        .caramel-text {
+            color: #9F6A46;
+            font-weight: bolder;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+
+        }
+
+        .myButton {
+            box-shadow:inset 0px 1px 0px 0px #22130F;
+            background-color:#00aba9;
+            border-radius:3px;
+            border:1px solid #2d231a;
+            display:inline-block;
+            cursor:pointer;
+            color: #ffffff;
+            font-weight: bolder;
+            font-family:Arial;
+            padding:6px 24px;
+            text-decoration:none;
+            text-shadow:0px 1px 0px #4d3534;
+            transition: .1s ease-in-out;
+        }
+        .myButton:hover {
+            background-color:#FF8C00;
+            transform: scale(1.03);
+        }
+        .myButton:active {
+            position:relative;
+            top:1px;
+        }
+
+        #coffeeList, #coffeeSearch {
+            background-color: #22130F;
+        !important;
+        }
+
+        .card {
+            text-align: center;
+            outline: black;
+            color: darkorange;
+        }
+        .card:hover{
+            color: #fe7d48;
+        }
+
+        .white-text {
+            color: white;
+        !important;
+        }
+
+        .white-a, a {
+            color: white;
+        !important;
+        }
+
+        .jumbotron {
+            height: 45vh;
+            background: url("https://cdn.luxe.digital/media/2020/05/07203610/best-coffee-beans-luxe-digital.jpg") no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .jumbotron:hover{
+            filter: brightness(80%);
+        }
+        body {
+            background-color: #2D231A;
+        }
+
+        nav {
+            background-color: #22130F;
+        }
+    </style>
 </head>
 <body>
-<div class="parent">
-    <!--============================================== DIV 1 SECTION ====================================================-->
-    <div class="div1 box">
-<!--        <img src="Coffee_Decorative_Text.png" class="coffee-header animated fadeIn" alt="" id="header">-->
-        <h1 id="header">Coffee Time!</h1>
-        <img src="img/left-coffee-emblem.png" alt="" class="iconImg2 rotate1">
-        <img src="img/coffee-emblem.png" alt="" class="iconImg rotate2">
-<!--        <hr class="hrStyle">-->
-    </div>
-    <!--============================================== DIV 2 SECTION ====================================================-->
-    <div class="div2 box" >
-        <form>
-            <h3 class="h3Style">Search Coffee</h3>
+<nav class="white-text navbar navbar-expand-lg sticky-top">
 
-            <label for="roast-selection" class="labels">Roast</label>
-            <br>
-            <select id="roast-selection" class="selectOptions">
-                <option>All</option>
-                <option>Light</option>
-                <option>Medium</option>
-                <option>Dark</option>
-            </select>
-            <br>
-            <label for="coffee-filter" class="labels">Coffee Name</label>
-            <br>
-            <input type="text" id="coffee-filter" class="searchBar" onkeyup="updateCoffees(roastSelection.value)" placeholder="Search...">
-            <br>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="#coffeeList" class="white-a nav-link">Coffee List</a>
+            </li>
+        </ul>
+        <a class="navbar-brand d-none d-lg-block caramel-text" href="#"><h1>Coffee Crazes</h1></a>
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a href="#newCoffee" class="white-a nav-link">Add Coffee<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="white-text jumbotron jumbotron-fluid m-0">
+        <div class="container text-center">
+            <div class="pt-4">
+                <h1 class="display-3">Coffee Crazes</h1>
+                <h4 class="">Plain black, a splash of creamer, caramel, whipped cream, the
+                    possibilities, are endless...</h4>
+            </div>
+
+            <a id="newCoffee"></a>
+        </div>
+    </div>
+
+
+    <div class="d-flex justify-content-around" id="coffeeSearch">
+        <form class="w-50 p-4">
+            <div class="row p-1">
+                <div class="col">
+                    <label for="roast-selection" class="light-text">Filter by Roast</label>
+                    <select id="roast-selection" class="form-control">
+                        <option>all</option>
+                        <option>light</option>
+                        <option>medium</option>
+                        <option>dark</option>
+                    </select>
+                </div>
+            </div>
+            <div class="p-1">
+                <input id="submit" class="form-control myButton" type="submit"/>
+            </div>
         </form>
-    </div>
 
-    <!--============================================== DIV 3 SECTION ====================================================-->
+        <form class="w-50 p-4">
+            <div class="row p-1">
+                <div class="col-6">
+                    <label for="new-name" class="light-text">Add a New Coffee</label>
+                    <input type="text" class="form-control" id="new-name" placeholder="Coffee Name..">
+                </div>
+                <div class="col-6">
+                    <label for="new-roast" class="light-text">Roast Type</label>
+                    <select id="new-roast" class="form-control">
+                        <option>light</option>
+                        <option>medium</option>
+                        <option>dark</option>
+                    </select>
+                </div>
 
-    <div class="div3 box">
-        <form>
-            <h3 class="h3Style">Add a Coffee</h3>
-            <label for="new-roast" class="labels">Roast Type</label>
-            <br>
-            <select id="new-roast" class="selectOptions">
-                <option>Light</option>
-                <option>Medium</option>
-                <option>Dark</option>
-            </select>
-            <br>
-            <label for="new-name" class="labels">Coffee Name</label>
-            <br>
-            <input type="text" id="new-name" class="searchBar" placeholder="Enter Coffee Name...">
-            <br>
-            <button type="submit" id="submit" class="submit">Submit</button>
-            <br>
+            </div>
+            <div class="p-1">
+                <button type="submit" class="form-control myButton" id="submitNew">Submit</button>
+            </div>
         </form>
 
     </div>
 
-    <!--============================================== DIV 4 SECTION ====================================================-->
 
-    <div id="coffee" class="div4 box"></div>
+    <div id="coffeeList" class="px-4">
+        <div class="card-columns" id="coffees">
+        </div>
+    </div>
 
-    <!--=================================================================================================================-->
 </div>
-<script src="js/crystal.js"></script>
+
+<script>
+    "use strict"
+
+    function renderCoffee(coffee) {
+
+        var html = '<div class="coffee card shadow-sm p-1 bg-white rounded">';
+        html += '<div class="card-body">' + '<h2 class="card-title">' + coffee.name + '</h2>';
+        html += '<h5 class="card-text">' + coffee.roast + ' roast' + '</h5>';
+        html += '</div>';
+        html += '</div>';
+
+        return html;
+
+    }
+
+    function renderCoffees(coffees) {
+        var html = '';
+        for (var i = coffees.length - 1; i >= 0; i--) {
+            html += renderCoffee(coffees[i]);
+        }
+        return html;
+    }
+
+    function updateCoffees(e) {
+        e.preventDefault(); // don't submit the form, we just want to update the data
+        var selectedRoast = roastSelection.value;
+        var filteredCoffees = [];
+        coffees.forEach(function (coffee) {
+            if (selectedRoast === 'all') {
+                filteredCoffees.push(coffee);
+            } else if (coffee.roast === selectedRoast) {
+                filteredCoffees.push(coffee);
+            }
+        });
+        tbody.innerHTML = renderCoffees(filteredCoffees);
+    }
+
+    function addACoffee(e) {
+        e.preventDefault();
+        var coffee = {
+            id: coffees.length + 1,
+            name: document.getElementById('new-name').value,
+            roast: document.getElementById('new-roast').value
+        };
+
+        coffees.push(coffee);
+        updateCoffees(e);
+        document.getElementById("new-name").value = "";
+
+    }
+
+    // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
+    var coffees = [
+        {id: 1, name: 'Light City', roast: 'light'},
+        {id: 2, name: 'Half City', roast: 'light'},
+        {id: 3, name: 'Cinnamon', roast: 'light'},
+        {id: 4, name: 'City', roast: 'medium'},
+        {id: 5, name: 'American', roast: 'medium'},
+        {id: 6, name: 'Breakfast', roast: 'medium'},
+        {id: 7, name: 'High', roast: 'dark'},
+        {id: 8, name: 'Continental', roast: 'dark'},
+        {id: 9, name: 'New Orleans', roast: 'dark'},
+        {id: 10, name: 'European', roast: 'dark'},
+        {id: 11, name: 'Espresso', roast: 'dark'},
+        {id: 12, name: 'Viennese', roast: 'dark'},
+        {id: 13, name: 'Italian', roast: 'dark'},
+        {id: 14, name: 'French', roast: 'dark'},
+    ];
+
+    var tbody = document.querySelector('#coffees');
+    var submitButton = document.querySelector('#submit');
+    var roastSelection = document.querySelector('#roast-selection');
+    var submitNewButton = document.querySelector('#submitNew');
+
+
+    tbody.innerHTML = renderCoffees(coffees);
+
+    submitButton.addEventListener('click', updateCoffees);
+
+    submitNewButton.addEventListener('click', addACoffee);
+</script>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
 </body>
 </html>
