@@ -5,6 +5,24 @@ html {
 body{
     padding: 0;
     margin: 0;
+    background-color: #EDEDED;
+}
+.test{
+    overflow: hidden; /* Makes cutoff work */
+    /*display: inline-block; !* Fit div to contents *!*/
+}
+iframe{
+    /*height: 100%;*/
+    overflow: hidden;
+    /*margin: 0;*/
+    padding: 0;
+    height: 85vh;
+    width: 90%;
+    /*padding: 0;*/
+    /*margin: 0;*/
+    /*pointer-events: none;*/
+    margin-top: -30px; /* Cut off top bar */
+    margin-bottom: -30px; /* Cut off bottom bar */
 }
 /*=========================================GRID INITIALIZATION====================================================*/
 .parent {
@@ -31,7 +49,7 @@ body{
     justify-content: space-evenly;
     align-items: center;
     text-transform: uppercase;
-    background-color: black;
+    background-color: #404444;
     z-index: 2;
     grid-area: 1 / 1 / 2 / 7;
 }
@@ -50,7 +68,9 @@ nav ul{
     left: 0;
     width: 100%
 }
-.div1 { grid-area: 2 / 3 / 4 / 5; }
+.div1 {
+    grid-area: 2 / 3 / 4 / 5;
+}
 .div2 { grid-area: 4 / 2 / 5 / 6; }
 .div3 { grid-area: 5 / 2 / 6 / 6; }
 .div4 {grid-area: 6 / 2 / 7 / 6; }
@@ -149,6 +169,7 @@ nav ul{
 }
 /*==============================================Circle Head Shot===============================================*/
 .circleImg{
+    /*border: 1px solid black;*/
     z-index: 1;
     border-radius: 50%;
     background-size: cover;
@@ -173,6 +194,12 @@ nav ul{
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     z-index: 1;
+}
+
+.text-blue{
+    position: static;
+    z-index: 1;
+    color: #28BFCE;
 }
 /*==============================================Div Fullscreen===============================================*/
 
@@ -228,11 +255,11 @@ nav ul{
 
 .arrow:hover::after {
     transform: rotate(45deg);
-    border-color: #2e71a5;
+    border-color: #28BFCE;
     height: 120%;
 }
 .arrow:hover::before {
-    border-color: #2e71a5;
+    border-color: #28BFCE;
     transform: scale(.8);
 
 }
@@ -253,14 +280,13 @@ nav ul{
     align-items: stretch;
 }
 .grid > article {
-    border: 2px solid slategrey;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
-    background-color: #000;
+    background-color: #404444;
     transition: all .4s ease-in-out;
 
 }
 article:hover{
-    transform: scale(1.05);
+    transform: scale(1.02);
     /*background-color: #2e71a5;*/
     /*background-color: #ccc;*/
     /*color: black;*/
@@ -281,7 +307,7 @@ article > .text {
     padding: 0 20px 20px;
 }
 a > button {
-    background: slategrey;
+    background: #28BFCE;
     display: block;
     border: 0;
     margin-left: auto;
@@ -297,7 +323,7 @@ a > button {
 }
 a > button:hover {
     transform: scale(1.04);
-    background-color: #1A8BB4;
+    background-color: #F85F17;
 }
 
 /*==============================================Icons===============================================*/
@@ -313,15 +339,15 @@ a > button:hover {
     height: 2em;
 }
 i {
-    transition: transform .5s ease;
+    transition: transform .3s ease;
     margin: .3em;
 }
 .notBlue{
-    color: white;
+    color: #28BFCE;
 }
 i:hover{
-    color: steelblue;
-    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    color: #F85F17;
+    transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 /*==============================================Resume===============================================*/
 /*.resume{*/
@@ -341,7 +367,7 @@ object{
 
 .header {
     top: 0;
-    background-color: black;
+    background-color: #404444;
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
     position: fixed;
     width: 100%;
@@ -353,20 +379,24 @@ object{
     padding: 0;
     list-style: none;
     overflow: hidden;
-    background-color: black;
+    background-color: #404444;
 }
 
 .header li a {
     display: block;
     padding: 20px 20px;
-    border-right: 1px solid #f4f4f4;
     text-decoration: none;
+}
+
+.header li a:hover {
+    border-right: 1px solid #F85F17;
+    border-left: 1px solid #F85F17;
 }
 
 .header li a:hover,
 .header .menu-btn:hover {
-    background-color: #f4f4f4;
-    color: black;
+    /*background-color: #68DBF1;*/
+    color: #28BFCE;
 }
 
 /* menu */
@@ -374,7 +404,7 @@ object{
 .header .menu {
     clear: both;
     max-height: 0;
-    transition: max-height .2s ease-out;
+    transition: max-height .10s ease-out;
 }
 
 /* menu icon */
@@ -467,7 +497,7 @@ a{
     color: skyblue;
 }
 a:hover{
-    color: steelblue;
+    color: coral;
 }
 .rotateimg180 {
     -webkit-transform:rotate(90deg);

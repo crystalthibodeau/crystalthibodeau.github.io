@@ -5,636 +5,329 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Crystal Thibodeau</title>
     <link href="https://fonts.googleapis.com/css?family=El+Messiri&display=swap" rel="stylesheet">
+    <!--    <link rel="stylesheet" href="css/index.css">-->
+    <!--    <link rel="stylesheet" href="css/index.media-query.css">-->
+    <link rel="stylesheet" href="css/updated-styling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="/extLibs/http_ajax.googleapis.com_ajax_libs_jquery_3.4.1_jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+    <!--    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>-->
 </head>
-<style>
 
-    @import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600');
-    html {
-        scroll-behavior: smooth;
-    }
-
-
-    .nav {
-        font-family: 'El Messiri', sans-serif;
-        text-align: center;
-        font-weight: 600;
-    }
-
-    .nav * {
-        box-sizing: border-box;
-        transition: all .4s ease;
-    }
-
-    .nav li {
-        display: inline-block;
-        list-style: outside none none;
-    }
-
-    .nav a {
-        padding: .5em .8em;
-        /*color: rgba(255,255,255,.5);*/
-        color: #a6afb8;
-        position: relative;
-        text-decoration: none;
-    }
-
-    .nav a::before,
-    .nav a::after {
-        content: '';
-        height: 14px;
-        width: 14px;
-        position: absolute;
-        transition: all .35s ease;
-        opacity: 0;
-        padding: .5em .8em;
-
-    }
-
-    .nav a::before {
-        content: '';
-        right: 0;
-        top: 0;
-        border-top: 3px solid honeydew;
-        border-right: 3px solid honeydew;
-        transform: translate(-100%, 50%);
-    }
-
-    .nav a:after {
-        content: '';
-        left: 0;
-        bottom: 0;
-        border-bottom: 3px solid honeydew;
-        border-left: 3px solid honeydew;
-        transform: translate(100%, -50%)
-    }
-
-    .nav a:hover:before,
-    .nav a:hover:after{
-        transform: translate(0,0);
-        opacity: 1;
-    }
-
-    .nav a:hover {
-        color: honeydew;
-    }
-    /*=========================================GRID INITIALIZATION====================================================*/
-
-    *{
-        box-sizing: border-box;
-    }
-    .parent {
-        display: grid;
-        grid-template-columns: 10% repeat(4, 20%) 10%;
-        grid-template-rows: 10% repeat(4, 17.5%) 20%;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-        position: absolute;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        font-family: 'El Messiri', sans-serif;
-        justify-items: center;
-
-
-    }
-
-    .div1 {
-        grid-area: 2 / 3 / 4 / 5;
-    }
-    .div2 {
-        grid-area: 4 / 2 / 5 / 6;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        letter-spacing: .5em;
-        /*text-shadow: 0 0 6px #FFFFFF;*/
-
-    }
-    .div3 {
-        grid-area: 5 / 2 / 6 / 6;
-        letter-spacing: .15em;
-    }
-    .div4 { grid-area: 7 / 2 / 8 / 6;
-    }
-
-
-    /*=========================================START OF BACKGROUND====================================================*/
-
-    @keyframes move-background {
-        from {
-            -webkit-transform: translate3d(0px, 0px, 0px);
-        }
-        to {
-            -webkit-transform: translate3d(1000px, 0px, 0px);
-        }
-    }
-    @-webkit-keyframes move-background {
-        from {
-            -webkit-transform: translate3d(0px, 0px, 0px);
-        }
-        to {
-            -webkit-transform: translate3d(1000px, 0px, 0px);
-        }
-    }
-
-    @-moz-keyframes move-background {
-        from {
-            -webkit-transform: translate3d(0px, 0px, 0px);
-        }
-        to {
-            -webkit-transform: translate3d(1000px, 0px, 0px);
-        }
-    }
-
-    @-webkit-keyframes move-background {
-        from {
-            -webkit-transform: translate3d(0px, 0px, 0px);
-        }
-        to {
-            -webkit-transform: translate3d(1000px, 0px, 0px);
-        }
-    }
-    .stars {
-        width:100vw;
-        height: 100vh;
-        background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        display: block;
-        z-index: 1;
-    }
-
-    .twinkling{
-        width:100vw;
-        height: 100vh;
-        background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
-        /*background-size: 1000px 1000px;*/
-        position: fixed;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        z-index: 2;
-
-        -moz-animation:move-background 30s linear infinite;
-        -ms-animation:move-background 30s linear infinite;
-        -o-animation:move-background 30s linear infinite;
-        -webkit-animation:move-background 20s linear infinite;
-        animation:move-background 30s linear infinite;
-
-    }
-
-    .clouds{
-        width:100%;
-        height: 100%;
-        background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png") repeat;
-        /*background-size: 1000px 1000px;*/
-        position: fixed;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        z-index: 3;
-
-        -moz-animation:mymove 60s infinite;
-        -ms-animation:mymove 60s infinite;
-        -o-animation:mymove 60s infinite;
-        -webkit-animation:mymove 60s infinite;
-        animation:mymove 60s infinite;
-    }
-    @-webkit-keyframes mymove {
-        35% {background-position: center;}
-    }
-
-    @keyframes mymove {
-        35% {background-position: center;}
-    }
-    /*=============================================DIRECT ELEMENT STYLING=============================================*/
-    h1{
-        font-size: 4.5em;
-        margin-top: 1em;
-    }
-    ul{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-    li{
-        list-style-type: none;
-        margin-top: 1em;
-        padding-right: .5em;
-        font-size: 1.35em;
-    }
-    /*==============================================START OTHER STYLING===============================================*/
-    .circleImg{
-        position: relative;
-        z-index: 5;
-        border-radius: 50%;
-        background-size: cover;
-        height: 19em;
-        width: 19em;
-        font-weight: 700;
-    }
-    .text{
-        position: center;
-        color: white;
-        /*text-shadow: 0 0 6px #FFFFFF;*/
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
-        /*color: black;*/
-        z-index: 4;
-    }
-    .fullScreen{
-        width: 88vw; height: 100vh;
-        /*position: absolute; top: 0; left: 0;*/
-    }
-    .fullScreenInner{
-        margin-top: 4em;
-        width: 100vw;
-        position: relative;
-        margin-left: -50vw;
-        height: 100px;
-        left: 50%;
-    }
-    .sticky {
-        padding-top: 1em;
-        display: flex;
-        position: -webkit-sticky; /* Safari */
-        position: sticky;
-        bottom: 2em;
-        justify-content: flex-end;
-    }
-
-    .arrow {
-        width: 6vmin;
-        height: 6vmin;
-        box-sizing: border-box;
-        bottom: 50%;
-        transform: rotate(-45deg);
-    }
-
-    .arrow:before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        border-width: .8vmin .8vmin 0 0;
-        border-style: solid;
-        border-color: #fafafa;
-        transition: .2s ease;
-        display: block;
-        transform-origin: 100% 0;
-    }
-
-
-    .arrow:after {
-        content: '';
-        float: left;
-        position: relative;
-        top: -100%;
-        width: 100%;
-        height: 100%;
-        border-width: 0 .8vmin 0 0;
-        border-style: solid;
-        border-color: #fafafa;
-        transform-origin: 100% 0;
-        transition:.4s ease;
-    }
-
-    .arrow:hover::after {
-        transform: rotate(45deg);
-        border-color: #2e71a5;
-        height: 120%;
-    }
-    .arrow:hover::before {
-        border-color: #2e71a5;
-        transform: scale(.8);
-
-    }
-
-    .transbox {
-        /*margin: 1em;*/
-        padding: 1em;
-        background-color: dimgrey;
-        border: 1px solid black;
-        opacity: 0.4;
-        /*filter: alpha(opacity=60); !* For IE8 and earlier *!*/
-    }
-    .flex-center{
-        position: absolute;
-        display: flex;
-        /*flex-direction: row;*/
-        justify-content:center;
-        /*position: center;*/
-        /*justify-items: center;*/
-        flex-direction: column;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        /*letter-spacing: .5em;*/
-    }
-    /*==============================================END OF STYLING====================================================*/
-
-
-
-
-
-    @media (max-width: 48em) {
-        /*    !*nav li {*!*/
-        /*    !*    float: left;*!*/
-        /*    !*}*!*/
-        /*    !*nav li a {*!*/
-        /*    !*    padding: 20px 30px;*!*/
-        /*    !*}*!*/
-        /*    !*.menu {*!*/
-        /*    !*    display: block;*!*/
-        /*    !*    clear: none;*!*/
-        /*    !*    float: right;*!*/
-        /*    !*    max-height: none;*!*/
-        /*    !*}*!*/
-        /*    .menu__icon,*/
-        /*    .menu__checkbox,*/
-        /*    .hamburger {*/
-        /*        display: none;*/
-        /*    }*/
-
-        .header {
-            background-color: #fff;
-            box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
-            position: fixed;
-            width: 100%;
-            z-index: 3;
-        }
-
-        .header ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            overflow: hidden;
-            /*background-color: #fff;*/
-        }
-
-        .header li a {
-            display: block;
-            /*padding: 20px 20px;*/
-            /*border-right: 1px solid #f4f4f4;*/
-            text-decoration: none;
-        }
-
-        .header li a:hover,
-        .header .menu-btn:hover {
-            background-color: #f4f4f4;
-        }
-
-        .header .logo {
-            display: block;
-            float: left;
-            font-size: 2em;
-            padding: 10px 20px;
-            text-decoration: none;
-        }
-
-        /* menu */
-
-        .header .menu {
-            clear: both;
-            max-height: 0;
-            transition: max-height .2s ease-out;
-        }
-
-        /* menu icon */
-
-        .header .menu-icon {
-            cursor: pointer;
-            display: inline-block;
-            float: right;
-            padding: 28px 20px;
-            position: relative;
-            user-select: none;
-        }
-
-        .header .menu-icon .navicon {
-            background: #333;
-            display: block;
-            height: 2px;
-            position: relative;
-            transition: background .2s ease-out;
-            width: 18px;
-        }
-
-        .header .menu-icon .navicon:before,
-        .header .menu-icon .navicon:after {
-            background: #333;
-            content: '';
-            display: block;
-            height: 100%;
-            position: absolute;
-            transition: all .2s ease-out;
-            width: 100%;
-        }
-
-        .header .menu-icon .navicon:before {
-            top: 5px;
-        }
-
-        .header .menu-icon .navicon:after {
-            top: -5px;
-        }
-
-        /* menu btn */
-
-        .header .menu-btn {
-            display: none;
-        }
-
-        .header .menu-btn:checked ~ .menu {
-            max-height: 240px;
-        }
-
-        .header .menu-btn:checked ~ .menu-icon .navicon {
-            background: transparent;
-        }
-
-        .header .menu-btn:checked ~ .menu-icon .navicon:before {
-            transform: rotate(-45deg);
-        }
-
-        .header .menu-btn:checked ~ .menu-icon .navicon:after {
-            transform: rotate(45deg);
-        }
-
-        .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-        .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-            top: 0;
-        }
-    }
-    /* 48em = 768px */
-
-    @media (min-width: 48em) {
-        .header li {
-            float: left;
-        }
-        .header li a {
-            /*padding: 20px 30px;*/
-        }
-        .header .menu {
-            clear: none;
-            /*float: right;*/
-            max-height: none;
-        }
-        .header .menu-icon {
-            display: none;
-        }
-        .parent {
-            display: grid;
-            grid-template-columns: 10% repeat(4, 20%) 10%;
-            grid-template-rows: 10% repeat(4, 17.5%) 20%;
-            grid-column-gap: 0px;
-            grid-row-gap: 0px;
-            position: absolute;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            font-family: 'El Messiri', sans-serif;
-            justify-items: center;
-
-
-        }
-
-        .div1 {
-            grid-area: 2 / 3 / 4 / 5;
-        }
-        .div2 {
-            grid-area: 4 / 2 / 5 / 6;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            letter-spacing: .5em;
-            /*text-shadow: 0 0 6px #FFFFFF;*/
-
-        }
-        .div3 {
-            grid-area: 5 / 2 / 6 / 6;
-            letter-spacing: .15em;
-        }
-        .div4 { grid-area: 7 / 2 / 8 / 6;
-        }
-        h1{
-            font-size: 4.5em;
-            margin-top: 1em;
-        }
-        ul{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-        li{
-            list-style-type: none;
-            margin-top: 1em;
-            padding-right: .5em;
-            font-size: 1.35em;
-        }
-        a{
-            color: white;
-        }
-    }
-
-
-
-
-</style>
-
-<body class="parent">
-<a id="top" name="home"></a>
+<body class="parent cf">
+<div class="nav">
+    <nav class="header">
+        <input class="menu-btn" type="checkbox" id="menu-btn"/>
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#aboutMe">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+        </ul>
+    </nav>
+    <a id="top"></a>
+</div>
 <div class="stars"></div>
 <div class="twinkling"></div>
 <div class="clouds"></div>
 
-<div class="div1">
-    <img src="img/foggy-mountains.jpg" alt="" class="circleImg">
+<div class="div1 flex-center">
+    <img src="img/codeup_2020-0046-2.jpg" alt="" class="circleImg">
 </div>
-<div class="div2">
-    <h1 class="text">Crystal Thibodeau</h1>
+<div class="div2 text" style="text-align: center">
+    <h1 class="mobile-margin">Crystal Thibodeau</h1>
+    <h2><em>"If you think you can do a thing or think you can't do a thing, you're right."</em>-Henry Ford</h2>
+
 </div>
 
-<!-- the entire document -->
+<div class="div3">
+</div>
 
 
-
-<header class=" header div3 text">
-    <input class="menu-btn" type="checkbox" id="menu-btn" />
-    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-    <nav>
-        <ul class="menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#aboutMe">About</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-<!--<div class="header">-->
-<!--    <div class="div3 text ">-->
-<!--        <input class="menu-btn" type="checkbox" id="menu-btn" />-->
-<!--        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>-->
-<!--        <nav>-->
-<!--        <ul class="menu">-->
-<!--                    <li><a href="#">Home</a></li>-->
-<!--                    <li><a href="#aboutMe">About</a></li>-->
-<!--                    <li><a href="#resume">Resume</a></li>-->
-<!--                    <li><a href="#portfolio">Portfolio</a></li>-->
-<!--                    <li><a href="#contact">Contact</a></li>-->
-<!--                </ul>-->
-<!--            </nav>-->
-<!--</div>-->
-<!--</div>-->
-
-
-
-<div class="text div4">
+<div class="text div4 padding-top">
     <div class="fullScreen">
-        <a name="aboutMe"><div class="fullScreenInner"></div></a>
-        <h2>About Me</h2>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus ducimus molestiae nesciunt perferendis sint voluptatum! Cum dolor, earum eligendi enim impedit laudantium maiores nihil, placeat provident quibusdam vitae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi doloribus eligendi facere nihil nobis optio porro quis quo saepe! Earum exercitationem nam officia pariatur repudiandae sit voluptas, voluptatem. Incidunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ducimus maiores voluptates? Aspernatur cupiditate deserunt doloribus ducimus, ea fugit harum hic nostrum perspiciatis placeat porro recusandae repudiandae tempora, temporibus ut.
-    </div>
+        <span class="anchor" id="aboutMe"></span>
+        <div>
+            <div class="inner-width">
+                <h2 class="center-text">About Me</h2>
+                <p>
+                    Crystal is recently graduated from Codeup as a student for Software Development and is always
+                    looking for new learning opportunities. Intrigued by art and design with a business mindset, she
+                    loves to balance her time working on new projects relative to both, showcasing UI websites through
+                    CSS and JavaScript. When away from her computer you will find her outdoors or on the road, soaking
+                    up the sun one adventure at a time.
+                </p>
 
-    <div class="fullScreen">
-        <a name="resume"><div class="fullScreenInner"></div></a>
-        <h2>Resume</h2>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus ducimus molestiae nesciunt perferendis sint voluptatum! Cum dolor, earum eligendi enim impedit laudantium maiores nihil, placeat provident quibusdam vitae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi doloribus eligendi facere nihil nobis optio porro quis quo saepe! Earum exercitationem nam officia pariatur repudiandae sit voluptas, voluptatem. Incidunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ducimus maiores voluptates? Aspernatur cupiditate deserunt doloribus ducimus, ea fugit harum hic nostrum perspiciatis placeat porro recusandae repudiandae tempora, temporibus ut.
-    </div>
+            </div>
+            <div class="about-flex mobile-hidden">
+                <figure class="img-hover-text">
+                    <img src="img/IMG_1860.jpg" class="circleImg2">
+                    <figcaption>
+                        <p>Crystal with her sister Abby </p>
+                    </figcaption>
+                </figure>
 
-    <div class="fullScreen">
-        <a name="portfolio"><div class="fullScreenInner"></div></a>
-        <h2>Portfolio</h2>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus ducimus molestiae nesciunt perferendis sint voluptatum! Cum dolor, earum eligendi enim impedit laudantium maiores nihil, placeat provident quibusdam vitae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi doloribus eligendi facere nihil nobis optio porro quis quo saepe! Earum exercitationem nam officia pariatur repudiandae sit voluptas, voluptatem. Incidunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ducimus maiores voluptates? Aspernatur cupiditate deserunt doloribus ducimus, ea fugit harum hic nostrum perspiciatis placeat porro recusandae repudiandae tempora, temporibus ut.
-    </div>
+                <figure class="img-hover-text">
+                    <img src="img/IMG_2309.JPG" class="circleImg2">
+                    <figcaption>
+                        <p>Morning fishing with Grandpa</p>
+                    </figcaption>
+                </figure>
 
-    <div class="fullScreen">
-        <a name="contact"><div class="fullScreenInner"></div></a>
-        <div class="">
-            <h2>Contact</h2>
-
-            <!--        <div class="transbox">-->
-            <!--            <div class="text">-->
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis delectus ducimus molestiae nesciunt perferendis sint voluptatum! Cum dolor, earum eligendi enim impedit laudantium maiores nihil, placeat provident quibusdam vitae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi doloribus eligendi facere nihil nobis optio porro quis quo saepe! Earum exercitationem nam officia pariatur repudiandae sit voluptas, voluptatem. Incidunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ducimus maiores voluptates? Aspernatur cupiditate deserunt doloribus ducimus, ea fugit harum hic nostrum perspiciatis placeat porro recusandae repudiandae tempora, temporibus ut.
-            <!--            </div>-->
+                <figure class="img-hover-text">
+                    <img src="img/IMG_0772.jpg" class="circleImg2 ">
+                    <figcaption>
+                        <p>Crystal's brother Will and niece Stephanie</p>
+                    </figcaption>
+                </figure>
+            </div>
         </div>
+
     </div>
-    <!--    </div>-->
-    <div class="sticky">
+    <div class="fullScreen">
+        <span class="anchor" id="contact"></span>
+        <div class="inner-width padding-top">
+            <h2 class="center-text">Contact</h2>
+        </div>
+        <div class="box flex">
+            <div>
+                <a href="tel:830-446-6854" class="notBlue item"><i class="fas fa-phone-square-alt fa-6x"></i></a>
+                <a href="mailto:crystalthibodeau2@gmail.com" target="_blank" class="notBlue item"><i
+                        class="fas fa-envelope fa-6x"></i></a>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/crystal-thibodeau-7414b81a2/" target="_blank" class="notBlue item"><i
+                        class="fab fa-linkedin fa-6x"></i></a>
+                <a href="https://github.com/crystalthibodeau" target="_blank" class="notBlue item"><i
+                        class="fab fa-github fa-6x"></i></a>
+            </div>
+        </div>
+
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="fullScreen center-text padding-bottom">
+        <span class="anchor" id="resume"></span>
+        <div class="inner-width">
+            <h2>Resume</h2>
+            <p>Click <a href="img/Crystal_Thibodeau.pdf" class="center-text">here</a> to view or download the PDF file
+                in a different tab.</p>
+            <div class="box flex">
+                <object data="img/Crystal_Thibodeau.pdf" type="application/pdf" class="resume" height="100vh"
+                        width="100vw">
+                    <p>It appears you don't have a PDF plugin for this browser.
+                        No biggie... you can <a href="img/Crystal_Thibodeau.pdf" class="notBlue">click here to
+                            download the PDF file.</a></p>
+                </object>
+            </div>
+        </div>
+
+
+    </div>
+    <br>
+    <br>
+    <div class="fullScreen">
+        <span class="anchor" id="portfolio"></span>
+        <div class="inner-width margin-bottom">
+            <h2 class="center-text">Portfolio</h2>
+            <div class="grid">
+
+                <article>
+                    <video controls>
+                        <source src="img/screenRecording.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="text">
+                        <h3>Bloggie</h3>
+                        <p>A Full Stack blog that allows users to favorite or comment on posts. Admin users have the
+                            ability to edit/delete posts through a separate admin page, and all users can report a post
+                            which is sent to an admin through email servicing. This Project is currently being worked
+                            on.</p>
+                        <a href="https://github.com/full-stack-blog/BlogForFun" target="_blank">
+                            <button type="button">View Application</button>
+                        </a>
+                        <!--                    <br>-->
+                        <!--                    <br>-->
+                        <!--                    <button>View on Github</button>-->
+
+                    </div>
+                </article>
+
+                <article>
+                    <img src="img/pantrychef.png" alt="Sample photo" class="img-card">
+                    <div class="text">
+                        <h3>PantryChef Capstone</h3>
+                        <p>This site is built using the Spoonacular API, as well as a MySql database structure in an
+                            agile environment. Users can search for recipes based off ingredients, title, or category
+                            which pulls data both from the API and database. </p>
+                        <a href="https://pantrychef.xyz/" target="_blank">
+                            <button type="button">View Live Site!</button>
+                        </a>
+                        <!--                <br>-->
+                        <!--                <br>-->
+                        <!--                <button>View on Github</button>-->
+
+                    </div>
+                </article>
+
+                <article>
+                    <img src="img/weather-map.png" alt="Sample photo" class="img-card">
+                    <div class="text">
+                        <h3>Weather Map</h3>
+                        <p>Application using DarkSky API in conjunction with Mapbox API giving the user the ability to
+                            view daily and weekly forecasts</p>
+                        <a href="weather_map.html" target="_blank">
+                            <button type="button">View Application</button>
+                        </a>
+                        <!--                <br>-->
+                        <!--                <br>-->
+                        <!--                <button>View on Github</button>-->
+
+                    </div>
+                </article>
+                <article>
+                    <img src="img/coffee-project.png" alt="Sample photo" class="img-card">
+                    <div class="text">
+                        <h3>Coffee Project</h3>
+                        <p>User interface styled through bootstrap and implementing javascript to search available coffees, or add a new coffee by
+                            name and roast. </p>
+                        <a href="coffee.html" target="_blank">
+                            <button type="button">View Application</button>
+                        </a>
+                        <br>
+                        <br>
+                    </div>
+                </article>
+                <article>
+                    <img src="img/to-do.png" alt="Sample photo" class="img-card">
+                    <div class="text">
+                        <h3>To-Do List</h3>
+                        <p>Bootstrap based applications for users to make a checklist of reminders/to-do's that can be
+                            deleted or marked completed as needed.</p>
+                        <a href="to-do.html" target="_blank">
+                            <button type="button">View Application</button>
+                        </a>
+                        <!--                <br>-->
+                        <!--                <br>-->
+                        <!--                <button>View on Github</button>-->
+
+                    </div>
+                </article>
+
+                <article>
+                    <img src="img/dnd-playground.png" alt="Sample photo" class="img-card">
+                    <div class="text">
+                        <h3>DND Playground</h3>
+                        <p>A sample version of a soon to come full-stack application that will allow players to
+                            personalize their character page and much more through Open5e API.</p>
+                        <a href="dndPlayground.html" target="_blank">
+                            <button type="button">View Application</button>
+                        </a>
+                        <!--                <br>-->
+                        <!--                <br>-->
+                        <!--                <button>View on Github</button>-->
+
+                    </div>
+                </article>
+                <article>
+                    <img src="img/pictureFlip.png" alt="Sample photo" class="img-card">
+                    <div class="text">
+                        <h3>Picture Flip</h3>
+                        <p>Enjoy this UI picture flip with simple implementations of Javascript and custom CSS picture
+                            frames.</p>
+                        <a href="picture-flip.html" target="_blank">
+                            <button type="button">View Application</button>
+                        </a>
+                        <!--                <br>-->
+                        <!--                <br>-->
+                        <!--                <button>View on Github</button>-->
+
+                    </div>
+                </article>
+
+
+                <article>
+                    <img src="img/konami.png" alt="Sample photo" class="img-card"/>
+                    <div class="text">
+                        <h3>Konami Code</h3>
+                        <p>Enter the Konami code - (up, up, down, down, left right, left right, B, A, Enter)! 2
+                            additional keyboard codes live in this application for surprise views.</p>
+                        <a href="konami.html" target="_blank">
+                            <button type="button">View Application</button>
+                        </a>
+                        <!--                    <br>-->
+                        <!--                    <br>-->
+                        <!--                    <button>View on Github</button>-->
+
+                    </div>
+                </article>
+
+
+                <!--            <article>-->
+                <!--                <img src="img/blog.png" alt="Sample photo" class="img-card">-->
+                <!--                <div class="text">-->
+                <!--                    <h3>Ajax Blog</h3>-->
+                <!--                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, beatae consectetur vitae.</p>-->
+                <!--                    <a href="to-do.html" target="_blank"><button type="button">View App</button></a>-->
+                <!--                    &lt;!&ndash;                <br>&ndash;&gt;-->
+                <!--                    &lt;!&ndash;                <br>&ndash;&gt;-->
+                <!--                    &lt;!&ndash;                <button>View on Github</button>&ndash;&gt;-->
+
+                <!--                </div>-->
+                <!--            </article>-->
+
+                <!--                <article>-->
+                <!--                    <img src="img/blog.png" alt="Sample photo" class="img-card">-->
+                <!--                    <div class="text">-->
+                <!--                        <h3>Ajax Blog</h3>-->
+                <!--                        <p>This blog layout uses JSON, alongside modern bootstrap styling for a mobile friendly-->
+                <!--                            design.</p>-->
+                <!--                        <a href="ajax-blog.html" target="_blank">-->
+                <!--                            <button type="button">View Application</button>-->
+                <!--                        </a>-->
+                <!--                        &lt;!&ndash;                <br>&ndash;&gt;-->
+                <!--                        &lt;!&ndash;                <br>&ndash;&gt;-->
+                <!--                        &lt;!&ndash;                <button>View on Github</button>&ndash;&gt;-->
+
+                <!--                    </div>-->
+                <!--                </article>-->
+
+                <!--                <a href="searchspring.html" target="_blank">-->
+                <!--                    <button type="button" style="color:white;">Searchspring</button>-->
+                <!--                </a>-->
+            </div>
+        </div>
+
+
+    </div>
+    <div class="sticky-arrow">
         <a href="#top" class="arrow"></a>
     </div>
 </div>
 
+
 <script>
+    window.jQuery || document.write('<script src="http://mysite.com/jquery.min.js"><\/script>');
+    $(document).ready(function () {
+        $(".sticky-arrow").hide();
 
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 200 && $(this).scrollTop() < 200) {
+                $(".sticky-arrow").show();
+            } else {
+                $(".sticky-arrow").hide();
+            }
+        });
 
+    });
 </script>
 </body>
 </html>
