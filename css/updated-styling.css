@@ -188,14 +188,21 @@ nav ul{
     text-align: center;
 }
 /*==============================================All Text===============================================*/
-
+.text2{
+    position: static;
+    color: #404444;
+    z-index: 1;
+}
 .text{
     position: static;
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     z-index: 1;
 }
-
+.text-underline{
+    text-decoration: underline;
+    text-decoration-color: #F85F17;
+}
 .text-blue{
     position: static;
     z-index: 1;
@@ -283,6 +290,7 @@ nav ul{
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
     background-color: #404444;
     transition: all .4s ease-in-out;
+    border: 1px solid #F85F17;
 
 }
 article:hover{
@@ -291,9 +299,7 @@ article:hover{
     /*background-color: #ccc;*/
     /*color: black;*/
 }
-/*article:hover > .text{*/
-/*    color: black;*/
-/*}*/
+
 .grid > article img {
     max-width: 100%;
 }
@@ -343,18 +349,14 @@ i {
     margin: .3em;
 }
 .notBlue{
-    color: #28BFCE;
+    color: #F78132;
 }
 i:hover{
-    color: #F85F17;
+    color: #28BFCE;
     transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 /*==============================================Resume===============================================*/
-/*.resume{*/
-/*    width: 850px;*/
-/*    height: 475px;*/
-/*    outline: none;*/
-/*}*/
+
 object{
     width: 850px;
     height: 475px;
@@ -366,6 +368,7 @@ object{
 /*==============================================Header===============================================*/
 
 .header {
+    border-bottom: 2px solid #F85F17;
     top: 0;
     background-color: #404444;
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
@@ -383,12 +386,14 @@ object{
 }
 
 .header li a {
+    /*border-bottom: 1px solid #F85F17;*/
     display: block;
     padding: 20px 20px;
     text-decoration: none;
 }
 
 .header li a:hover {
+    /*border-bottom: none;*/
     border-right: 1px solid #F85F17;
     border-left: 1px solid #F85F17;
 }
@@ -404,7 +409,7 @@ object{
 .header .menu {
     clear: both;
     max-height: 0;
-    transition: max-height .10s ease-out;
+    transition: max-height .6s ease-out;
 }
 
 /* menu icon */
@@ -494,11 +499,12 @@ object{
 
 a{
     text-decoration: none;
-    color: skyblue;
+    color: #068A98;
 }
-a:hover{
+a:hover, a:after{
     color: coral;
 }
+
 .rotateimg180 {
     -webkit-transform:rotate(90deg);
     -moz-transform: rotate(90deg);
@@ -514,10 +520,12 @@ a:hover{
     background-size: cover;
     height: 19em;
     width: 19em;
-}
-.circleImg2:hover{
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
+}
+.circleImg2:hover{
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
 }
 
 .about-flex{
